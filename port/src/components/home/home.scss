@@ -1,0 +1,9 @@
+.home {
+    background-color: bisque;
+    border-radius: 20px;
+    margin: 1vh;
+    &-container {
+        margin: 2vh;
+        overflow: hidden;
+    }
+}

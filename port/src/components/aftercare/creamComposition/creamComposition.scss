@@ -1,0 +1,133 @@
+@use '@styles/_variables.scss' as *;
+
+.cream-composition {
+  padding: 20px;
+  padding-top: 0;
+  h3 {
+    font-size: 2em;
+    font-weight: bold;
+    color: $colorDeepGrey;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: $colorGrey;
+  }
+
+  .special-formula {
+    margin-bottom: 30px;
+
+    h4 {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: $colorDeepGrey;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: $colorGrey;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+
+      li {
+        font-size: 1.2em;
+        color: $colorGrey;
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 20px;
+
+        &::before {
+          content: '•';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 1.5em;
+          color: $colorCarbon;
+        }
+      }
+    }
+  }
+
+  .usage {
+    margin-bottom: 30px;
+
+    h4 {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: $colorDeepGrey;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      color: $colorGrey;
+      margin-bottom: 15px;
+    }
+
+    strong {
+      font-weight: bold;
+      color: $colorDeepGrey;
+    }
+  }
+
+  .storage-conditions {
+    margin-bottom: 30px;
+
+    h4 {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: $colorDeepGrey;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      color: $colorGrey;
+      margin-bottom: 15px;
+    }
+  }
+
+  .ingredients {
+    margin-bottom: 30px;
+
+    h4 {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: $colorDeepGrey;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+
+      li {
+        font-size: 1.2em;
+        color: $colorGrey;
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 20px;
+
+        &::before {
+          content: '•';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 1.5em;
+          color: $colorCarbon;
+        }
+      }
+    }
+  }
+}

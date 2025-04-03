@@ -1,0 +1,37 @@
+@use '@styles/_variables.scss' as *;
+
+.cream-composition-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  .cream-composition-button {
+    width: auto;
+    height: auto;
+    border-radius: 40px;
+    border: none;
+    background: $colorBronzeTransparent;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset -5px -5px 15px rgba(0, 0, 0, 0.2),
+      inset 5px 5px 15px rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+
+    &.active {
+      // background: linear-gradient(to bottom right, #333, #111);
+      background-color: $colorCarbonTransparent;
+      color: #fff;
+      box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.5),
+        inset -5px -5px 15px rgba(255, 255, 255, 0.2);
+      transform: scale(0.95);
+    }
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "aftercare": {
+    "go": {
+      "title": "Your care plan",
+      "bandageInstructions": {
+        "1": {
+          "title": "Remove the bandage",
+          "content": "After 2–4 hours, remove all the bandage I so carefully applied to you after the session. Breathe easy, your tattoo wants some freedom too."
+        },
+        "2": {
+          "title": "Wash your tattoo",
+          "content": "Use warm water + antibacterial soap. Pat dry with a clean paper towel, don’t rub."
+        },
+        "3": {
+          "title": "Apply cream",
+          "content": "A thin layer is enough to let the tattoo breathe. Don’t drown it in cream."
+        },
+        "4": {
+          "title": "Cover with a baby wrap",
+          "content": "Use a fresh wrap + tape or bandage if you’re heading outside or going to bed. At home, you can skip the wrap but don’t forget to apply cream!"
+        },
+        "5": {
+          "title": "Change the wrap",
+          "content": "For the next 3 days, you'll need to change your bandage every 3-4 hours following this routine. Commit to your tattoo and do it responsibly - it's worth it."
+        },
+        "6": {
+          "title": "Let your tattoo breathe on day 4",
+          "content": "No more wraps needed, but aftercare is still important 2–3 times a day (for 2–3 weeks). Care = perfect healing."
+        }
+      },
+      "suprasorbInstructions": {
+        "1": {
+          "title": "Peel of old film",
+          "content": "You better peel off that film, I slapped on you, after the session (within 24h), especially if there's any gunky staff up under it."
+        },
+        "2": {
+          "title": "Wash",
+          "content": "Gently wash your tattoo (antibacterial soap + a clean towel - no shortcuts!)."
+        },
+        "3": {
+          "title": "A little bit alcohol",
+          "content": "Before sticking on a new film, clean the area around the tattoo with alcohol (non-glycerin alcohol antiseptic). I wouldn’t recommend using whiskey or brandy for cleaning, but hey, if you’ve got some Isabella’s Islay whiskey to spare, that’d be a whole different story!"
+        },
+        "4": {
+          "title": "Fresh film",
+          "content": "Slap on a fresh film and forget about your tattoo for the next 3-4 days."
+        },
+        "5": {
+          "title": "Peel off",
+          "content": "Then, remember it again, rip that film off (yeah, it'll hurt, but you'll survive)."
+        },
+        "6": {
+          "title": "Care after",
+          "content": "Start slathering it with cream 2-3 times a day, for the next 2-3 weeks. No skipping, or your tattoo will hate you."
+        }
+      }
+    },
+    "no-go": {
+      "title": "Things to avoid",
+      "general": {
+        "1": {
+          "title": "No tanning",
+          "content": "Your tattoo is a vampire. Sunlight = enemy. UV rays will ruin the healing and the color"
+        },
+        "2": {
+          "title": "No swimming",
+          "content": "Pools, hot tubs, the ocean? Nope. Full of bacteria, and your tattoo is an open wound"
+        },
+        "3": {
+          "title": "Don’t scratch or pick",
+          "content": "Yes, it’ll itch. No, you can’t scratch. Let the scabs fall off naturally"
+        },
+        "4": {
+          "title": "Wear loose clothes",
+          "content": "Stay comfy, and let your tattoo breathe.Tight clothes are its worst nightmare"
+        },
+        "5": {
+          "title": "No workouts",
+          "content": "Sweat and heavy lifting can wait. Give your tattoo a break for a few days"
+        }
+      }
+    },
+    "qa": {
+      "title": "Questions and answers",
+      "bandageInstructions": {
+        "1": {
+          "title": "What happens if you don’t change the wrap often enough:​​",
+          "inline-content": [
+            "The greenhouse effect",
+            "Unpleasant odor",
+            "Irritation and rash",
+            "The wrap sticking to the tattoo",
+            "Slower healing",
+            "Risk of infection",
+            "Poor tattoo appearance"
+          ],
+          "note": "Conclusion: Changing the wrap every 4–6 hours isn’t just your artist’s whim — it’s the key to your tattoo healing beautifully and without any unpleasant surprises!"
+        },
+        "2": {
+          "title": "Do I need to keep my tattoo covered with a wrap?",
+          "content": "For the first 3 days — absolutely! Going out without a wrap is like leaving the house without pants. At home, you can leave it open, but only if nothing touches your tattoo."
+        },
+        "3": {
+          "title": "Can I take a shower?",
+          "content": "Yes, but make it quick, like a firefighter on a mission. No steaming, scrubbing, or loofahs allowed. And baths, saunas, or pools? Forget them for 3 weeks — your tattoo won’t forgive you."
+        },
+        "4": {
+          "title": "What if the wrap sticks to my tattoo?",
+          "content": "No drama! Just wet it with warm water and gently remove it. Be kind — patience and care are your best tools here."
+        },
+        "5": {
+          "title": "What should I do with the scabs?",
+          "content": "Nothing. Seriously. Let them do their thing. Don’t pick, peel, or mess with them. Scabs know when it’s their time to go."
+        },
+        "6": {
+          "title": "What if my tattoo itches?",
+          "content": "That’s great! It means it’s healing. Wash it, apply cream, or give it a gentle pat. But no scratching, okay? Nails are your tattoo’s worst enemy."
+        },
+        "7": {
+          "title": "Why are there red spots or fluid under the wrap?",
+          "content": "Stay calm — it’s just lymph fluid. Wash the tattoo, apply cream, and put on a fresh wrap. Everything is going as it should."
+        }
+      },
+      "suprasorbInstructions": {
+        "1": {
+          "title": "What if I have an allergic reaction to the adhesive?​",
+          "content": "If your skin starts rebelling against the film (itches, turns red, or looks annoyed)",
+          "inline-content": [
+            "Stay calm, no panic! Gently remove the film under warm water — let it leave peacefully and painlessly.",
+            "Wash the tattoo with mild antibacterial soap and pat it dry with a clean paper towel — no rubbing!",
+            "Give your skin some time to breathe and relax",
+            "Start your regular aftercare routine: apply healing cream 2–3 times a day. "
+          ],
+          "note": "If the reaction gets out of hand and your skin keeps complaining — don’t play the hero. Reach out to me or head to a doctor. Don’t worry, it’s fixable!"
+        },
+        "2": {
+          "title": " I need to apply cream under the film?",
+          "content": "Nope, everything’s already perfect under the film! Suprasorb creates its own “comfort zone” for healing, and cream would just ruin the vibe. You’ll need the cream only after the film comes off — let your tattoo breathe in peace for now"
+        },
+        "3": {
+          "title": " Why can’t I work out with the film on?",
+          "content": "Sweat is no friend to your tattoo. All that moisture builds up under the film, turning it into a mini sauna, and trust me — your tattoo won’t enjoy that kind of “spa day.” It increases the risk of the film peeling off and slows down healing. Workouts can wait — your tattoo is the priority here!"
+        },
+        "4": {
+          "title": "Can I shower with the film?",
+          "content": "Yes, but don’t scrub it with a sponge or expose it to hot steam."
+        },
+        "5": {
+          "title": "What if there’s fluid or ink under the film?",
+          "content": "That’s normal. If there’s too much, you can replace the film again."
+        },
+        "6": {
+          "title": "How do I remove the film?",
+          "content": "Under warm water, pull it parallel to the skin"
+        }
+      }
+    }
+  },
+  "gift": {
+    "cream-composition": {
+      "button": {
+        "title": "What's inside Vesper Cream ?"
+      },
+      "title": "Vesper Healin Daily Cream",
+      "description": "A unique vitamin cream for fast healing of the skin in the presence of tattoo pigments. It reduces inflammation and itching of fresh tattoos.",
+      "specialFormula": {
+        "title": "Special Formula",
+        "details": "The special formula for tattoo care in Vesper Healin Daily cream includes water, refined coconut oil, cetyl stearyl alcohol, d-panthenol (7%), PEG-40, soy wax, sesame oil, vegetable lanolin, glycerin, and preservatives that are absorbed by the skin for hydration and healing.",
+        "benefits": [
+          "Provides effective healing from the first day after the tattoo session to the last day of skin regeneration.",
+          "Moisturizes the skin and keeps it toned for 4-5 hours, allowing less frequent application while maintaining constant hydration.",
+          "Does not stain clothes.",
+          "Non-greasy and does not contain petrolatum, unlike most creams.",
+          "Completely VEGAN-FREE product (no beeswax).",
+          "Made entirely from natural and safe ingredients.",
+          "Easy and painless to apply evenly in a thin layer on damaged skin."
+        ]
+      },
+      "usage": {
+        "title": "How to use",
+        "instructions": "The primary name of the cream indicates its use throughout the day for maximum comfortable healing and maximum skin saturation to avoid skin tightness.",
+        "naturalHealing": {
+          "title": "Natural Healing",
+          "content": "DAILY CREAM allows tattoos to heal naturally but faster, relieving itching and the sensation of skin tightness."
+        },
+        "seasonalUse": {
+          "title": "Seasonal Use",
+          "content": "The cream is indispensable in warm weather when using compresses may cause discomfort, and the protective film may weaken due to increased sweating."
+        }
+      },
+      "storageConditions": {
+        "title": "Storage Conditions",
+        "content": "Store at a temperature between +5°C and +25°C."
+      },
+      "ingredients": {
+        "tilte": "Ingredients",
+        "content": [
+          "Water",
+          "Coconut oil (organic)",
+          "Cetyl stearyl alcohol",
+          "D-panthenol (7%)",
+          "PEG-40",
+          "Soy wax",
+          "Sesame oil",
+          "Vegetable lanolin",
+          "Glycerin",
+          "Preservative",
+          "Fragrance (parfum)"
+        ]
+      }
+    }
+  }
+}

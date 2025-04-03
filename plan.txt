@@ -1,0 +1,27 @@
+-- CONCEPT --
+Flashcard-style language learning app. 
+A random word (key) is shown, user types the correct translation (value). 
+If correct → next word. If wrong → try again.
+
+-- CORE FEATURES --
+Word pairs stored as { "apple": "яблуко", "house": "будинок" }
+Show random key word in center
+Input field to type translation
+Check if input matches value
+Loop until all words answered correctly
+
+-- UI ELEMENTS --
+Big centered word
+Input field + submit button (or Enter)
+Optional: hints, progress bar
+
+-- TECH STACK --
+HTML / SCSS / React / Typescript / Router
+
+-- TASKS --
+
+ - [x] cards page
+    - [x] add to router
+    - [x] random drop word and input 
+    - [x] answer calculating
+    - [x] styling

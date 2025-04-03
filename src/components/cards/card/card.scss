@@ -1,0 +1,66 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  padding: 30px;
+  border: 1px solid #d2f898;
+  border-radius: 24px;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+  &-title {
+    color: #6aa83c;
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  &-answer-input {
+    display: flex;
+    gap: 16px;
+    height: 40px;
+    margin-top: 12px;
+
+    input {
+      border: 1px solid #d2f898;
+      border-radius: 12px;
+      padding: 8px 12px;
+      font-size: 1rem;
+      transition: border-color 0.2s ease;
+
+      &:focus {
+        border-color: #6aa83c;
+        outline: none;
+      }
+    }
+
+    button {
+      background-color: #6aa83c;
+      color: #ffffff;
+      border: none;
+      border-radius: 12px;
+      padding: 0 16px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background-color: #578a30;
+      }
+    }
+  }
+}
+
+.shadow-red {
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+}
+
+.shadow-blue {
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.8);
+}
+
+.shadow {
+  transition: 1s;
+}

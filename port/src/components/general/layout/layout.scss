@@ -1,0 +1,48 @@
+@use '@styles/_variables.scss' as *;
+
+.layout {
+  flex: 1;
+  flex-direction: column;
+  display: flex;
+  min-height: 100vh;
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('@assets/main-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    will-change: transform;
+  }
+  .content {
+    position: relative;
+    flex: 1;
+  }
+
+  .footer {
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;
+    width: 100%;
+    background-color: $colorBronze;
+    color: $colorCarbon;
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      justify-content: start;
+
+      a {
+        color: $colorCarbon;
+        text-decoration: none;
+      }
+    }
+  }
+}
