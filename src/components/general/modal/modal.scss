@@ -10,6 +10,7 @@
   cursor: pointer;
 
   &-container {
+    cursor: auto;
     position: absolute;
     transition: opacity 0.5s ease;
     color: black;

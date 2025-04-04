@@ -77,6 +77,11 @@ export const getVocabulary = (key: string) => {
   }
   return vocabulary[key];
 };
+
+export const getVocabularys = () => {
+  return vocabulary;
+};
+
 // Vocabulary value actions
 export const addVocabularyValue = (
   vocabularyKey: string,

@@ -1,0 +1,33 @@
+.dict-list {
+  display: flex;
+  flex-direction: column;
+  &-item {
+    gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Courier New", Courier, monospace;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    .buttons {
+      display: flex;
+      gap: 10px;
+
+      button {
+          border: 1px solid grey;
+          border-radius: 4px;
+          font-family: monospace;
+          cursor: pointer;
+    
+      }
+      button:first-child {
+        background-color: #de6b74;
+      }
+
+      button:last-child {
+        background-color: #2a9d8f;
+      }
+    }
+  }
+}

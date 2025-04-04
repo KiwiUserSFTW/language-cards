@@ -7,6 +7,7 @@ import "./dictionaries.scss";
 // database
 import { addVocabulary, updateLocalStorageData } from "../../data/vocabulary";
 import Modal from "../general/modal/modal";
+import DictionariesList from "./dictionariesList/dictionariesList";
 
 const Dictionaries: FC = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -21,15 +22,14 @@ const Dictionaries: FC = () => {
     updateLocalStorageData();
   };
 
-  const handleClick = () => {
+  const openList = () => {
     setOpenModal(openModal ? false : true);
-    // alert("modal window with list");
   };
+
   return (
     <div className="dictionary">
       <Modal open={openModal} setOpen={setOpenModal}>
-        {" "}
-        CONTENT
+        {<DictionariesList />}
       </Modal>
       <div className="dictionary-import">
         <label htmlFor="input">Upload new dictionary (json)</label>
@@ -42,8 +42,8 @@ const Dictionaries: FC = () => {
           onChange={(event) => handleUpload(event)}
         />
       </div>
-      <button className="dictionary-remove" onClick={() => handleClick()}>
-        remove old one
+      <button className="dictionary-remove" onClick={() => openList()}>
+        remove or edit old one
       </button>
     </div>
   );
