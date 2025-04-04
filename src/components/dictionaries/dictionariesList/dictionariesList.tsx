@@ -1,33 +1,41 @@
 // react
-import { FC, ReactNode, useState } from "react";
+import { FC, ReactNode, useEffect, useState } from "react";
 
 // styles
 import "./dictionariesList.scss";
 
 // database
-import { getVocabularys } from "../../../data/vocabulary";
+import { deleteVocabulary, getVocabularys } from "../../../data/vocabulary";
 
 const DictionariesList: FC = () => {
-  const Dictlist = Object.keys(getVocabularys());
+  const dictlist = Object.keys(getVocabularys());
 
-  const [vocabularys, setVocabularys] = useState(Dictlist);
-
+  const [vocabularys, setVocabularys] = useState<ReactNode>();
+  console.log(dictlist, "DICTIONARIES LIST");
   // TODO CONFIRM MODAL WINDOW
-  const handleClick = () => {
+  const handleClick = (key: string) => {
     alert("element deleted");
+    setVocabularys(dictlist);
+    deleteVocabulary(key);
   };
-  const listRender = (): ReactNode => {
-    return vocabularys.map((item) => (
+  const listRender = () => {
+    const renderedList = dictlist.map((item) => (
       <div className="dict-list-item">
         {item}
-        <div className="buttons">
-          <button onClick={() => handleClick()}> delete </button>
-          <button onClick={() => handleClick()}> edit </button>
+        <div className="buttons" key={item}>
+          <button onClick={() => handleClick(item)}> delete </button>
+          <button onClick={() => handleClick(item)}> edit </button>
         </div>
       </div>
     ));
+    setVocabularys(renderedList);
   };
-  return <div className="dict-list">{listRender()}</div>;
+
+  useEffect(() => {
+    listRender();
+  }, [vocabularys]);
+
+  return <div className="dict-list">{vocabularys}</div>;
 };
 
 export default DictionariesList;
