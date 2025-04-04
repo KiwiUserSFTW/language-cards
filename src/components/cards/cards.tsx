@@ -9,17 +9,16 @@ const getRandomCard = (cardsList: Record<string, string>) => {
   const entries = Object.entries(cardsList);
   return entries[Math.floor(Math.random() * entries.length)];
 };
+import { getVocabulary } from "../../data/vocabulary";
 
 // components
 import Card from "./card/card";
 
 // types
-import { cardsDataType } from "./cardsMockData/cardsMockData";
-
-// mockData
-import { cardsData } from "./cardsMockData/cardsMockData";
+import { cardsDataType } from "../../data/vocabulary";
 
 const Cards: FC = () => {
+  const cardsData = getVocabulary("init-vocabulary") || {};
   const [cardsList, setCardsList] = useState<cardsDataType>(cardsData);
   const [currentCard, setCurrentCard] = useState<{
     value: string;
