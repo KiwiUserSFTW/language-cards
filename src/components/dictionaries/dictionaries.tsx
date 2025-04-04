@@ -1,13 +1,15 @@
 // react
-import { FC } from "react";
+import { FC, useState } from "react";
 
 // styles
 import "./dictionaries.scss";
 
 // database
 import { addVocabulary, updateLocalStorageData } from "../../data/vocabulary";
+import Modal from "../general/modal/modal";
 
 const Dictionaries: FC = () => {
+  const [openModal, setOpenModal] = useState(false);
   const handleUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (!file) return;
@@ -20,10 +22,15 @@ const Dictionaries: FC = () => {
   };
 
   const handleClick = () => {
-    alert("modal window with list");
+    setOpenModal(openModal ? false : true);
+    // alert("modal window with list");
   };
   return (
     <div className="dictionary">
+      <Modal open={openModal} setOpen={setOpenModal}>
+        {" "}
+        CONTENT
+      </Modal>
       <div className="dictionary-import">
         <label htmlFor="input">Upload new dictionary (json)</label>
         <input
