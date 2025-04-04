@@ -47,7 +47,7 @@ const Card: FC<CardPropsType> = ({ value, answer, updateCards }) => {
   };
   return (
     <div className={`card shadow ${animationValidate()}`}>
-      <h1 className="card-title">{value}</h1>
+      <p className="card-title">{value}</p>
       <div className="card-answer-input">
         <input
           value={input}

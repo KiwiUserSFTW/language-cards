@@ -5,7 +5,11 @@ import { FC, ReactNode, useEffect, useState } from "react";
 import "./dictionariesList.scss";
 
 // database
-import { deleteVocabulary, getVocabularys } from "../../../data/vocabulary";
+import {
+  deleteVocabulary,
+  getVocabularys,
+  updateLocalStorageData,
+} from "../../../data/vocabulary";
 
 const DictionariesList: FC = () => {
   const dictlist = Object.keys(getVocabularys());
@@ -17,6 +21,8 @@ const DictionariesList: FC = () => {
     alert("element deleted");
     setVocabularys(dictlist);
     deleteVocabulary(key);
+    // DATABASE COMMENT FOR TESTING
+    updateLocalStorageData();
   };
   const listRender = () => {
     const renderedList = dictlist.map((item) => (
