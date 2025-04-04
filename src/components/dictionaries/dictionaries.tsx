@@ -5,7 +5,7 @@ import { FC } from "react";
 import "./dictionaries.scss";
 
 // database
-import { addVocabulary } from "../../data/vocabulary";
+import { addVocabulary, updateLocalStorageData } from "../../data/vocabulary";
 
 const Dictionaries: FC = () => {
   const handleUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -16,6 +16,11 @@ const Dictionaries: FC = () => {
     const json = JSON.parse(text);
 
     addVocabulary(fileName, json);
+    updateLocalStorageData();
+  };
+
+  const handleClick = () => {
+    alert("modal window with list");
   };
   return (
     <div className="dictionary">
@@ -30,7 +35,9 @@ const Dictionaries: FC = () => {
           onChange={(event) => handleUpload(event)}
         />
       </div>
-      <button className="dictionary-remove">remove old one</button>
+      <button className="dictionary-remove" onClick={() => handleClick()}>
+        remove old one
+      </button>
     </div>
   );
 };

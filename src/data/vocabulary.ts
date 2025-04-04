@@ -5,7 +5,11 @@ export type vocabularyType = {
   [key: string]: cardsDataType;
 };
 
-let vocabulary: vocabularyType = {
+enum localStorageEnum {
+  DICTIONARIES = "Dictionaries",
+}
+
+const initialDictionaries = {
   "init-vocabulary": {
     apple: "яблуко",
     banana: "банан",
@@ -32,6 +36,21 @@ let vocabulary: vocabularyType = {
   },
 };
 
+let localstorageDictionaries: vocabularyType;
+
+try {
+  const stored = localStorage.getItem(localStorageEnum.DICTIONARIES);
+  localstorageDictionaries = stored ? JSON.parse(stored) : initialDictionaries;
+} catch (error) {
+  console.warn("JSON Dictionaries in localStorage does not exist:", error);
+  localstorageDictionaries = initialDictionaries;
+}
+
+let vocabulary: vocabularyType = localstorageDictionaries;
+
+if (localstorageDictionaries) {
+  vocabulary = localstorageDictionaries;
+}
 // Vocabulary database actions
 export const addVocabulary = (key: string, value: cardsDataType) => {
   if (vocabulary[key]) {
@@ -92,4 +111,10 @@ export const deleteVocabularyValue = (vocabularyKey: string, key: string) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { [key]: _deleted, ...newVocabulary } = vocabulary[vocabularyKey];
   vocabulary[vocabularyKey] = newVocabulary;
+};
+
+// Local storage
+export const updateLocalStorageData = () => {
+  const data = JSON.stringify(vocabulary);
+  localStorage.setItem(localStorageEnum.DICTIONARIES, data);
 };

@@ -27,7 +27,7 @@ const Cards: FC = () => {
     value: "apple",
     answer: "яблуко",
   });
-
+  console.log(cardsData);
   const updateCards = (value: string) => {
     const { [value]: deletedValue, ...newState } = cardsList;
     setCardsList(newState);
