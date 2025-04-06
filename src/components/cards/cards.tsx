@@ -9,13 +9,15 @@ const getRandomCard = (cardsList: Record<string, string>) => {
   const entries = Object.entries(cardsList);
   return entries[Math.floor(Math.random() * entries.length)];
 };
-import { getVocabulary } from "../../data/vocabulary";
+import { getVocabulary, getVocabularys } from "../../data/vocabulary";
 
 // components
 import Card from "./card/card";
 
 // types
 import { cardsDataType } from "../../data/vocabulary";
+import TabSwitcher from "../general/tabSwitcher/tabSwitcher";
+import { useNavigate } from "react-router-dom";
 
 const Cards: FC = () => {
   const cardsData = getVocabulary("init-vocabulary") || {};
@@ -27,7 +29,6 @@ const Cards: FC = () => {
     value: "apple",
     answer: "яблуко",
   });
-  console.log(cardsData);
   const updateCards = (value: string) => {
     const { [value]: deletedValue, ...newState } = cardsList;
     setCardsList(newState);
@@ -41,8 +42,20 @@ const Cards: FC = () => {
     const [value, answer] = getRandomCard(cardsList);
     setCurrentCard({ value, answer });
   }, [cardsList]);
+
+  // get rid of
+  const navigate = useNavigate();
+
+  const navigateTo = (name: string) => {
+    navigate("?id=" + name);
+  };
+
+  const tabs = Object.keys(getVocabularys()).map((vocabulary) => {
+    return { name: vocabulary, onClick: () => navigateTo(vocabulary) };
+  });
   return (
     <div className="cards">
+      <TabSwitcher tabs={tabs} />
       <Card
         value={currentCard.value}
         answer={currentCard.answer}

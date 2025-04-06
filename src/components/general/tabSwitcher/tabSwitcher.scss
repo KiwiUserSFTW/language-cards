@@ -1,0 +1,18 @@
+.tab-container {
+    .tab {
+        padding: 5px;
+        margin: 10px;
+        border: 1px solid grey;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    position: absolute;
+    top:10px;
+    right: 10px;
+    color: white;
+
+    .active {
+        color: rgb(155, 87, 87);
+    }
+}
