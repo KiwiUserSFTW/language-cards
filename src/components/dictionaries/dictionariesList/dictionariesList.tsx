@@ -1,5 +1,5 @@
 // react
-import { FC, ReactNode, useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 
 // styles
 import "./dictionariesList.scss";
@@ -12,36 +12,33 @@ import {
 } from "../../../data/vocabulary";
 
 const DictionariesList: FC = () => {
-  const dictlist = Object.keys(getVocabularys());
-
-  const [vocabularys, setVocabularys] = useState<ReactNode>();
-  console.log(dictlist, "DICTIONARIES LIST");
-  // TODO CONFIRM MODAL WINDOW
-  const handleClick = (key: string) => {
-    alert("element deleted");
-    setVocabularys(dictlist);
-    deleteVocabulary(key);
-    // DATABASE COMMENT FOR TESTING
-    updateLocalStorageData();
-  };
-  const listRender = () => {
-    const renderedList = dictlist.map((item) => (
-      <div className="dict-list-item">
-        {item}
-        <div className="buttons" key={item}>
-          <button onClick={() => handleClick(item)}> delete </button>
-          <button onClick={() => handleClick(item)}> edit </button>
-        </div>
-      </div>
-    ));
-    setVocabularys(renderedList);
-  };
+  const [dictlist, setDictList] = useState<string[]>([]);
 
   useEffect(() => {
-    listRender();
-  }, [vocabularys]);
+    const vocab = getVocabularys();
+    setDictList(Object.keys(vocab));
+  }, []);
 
-  return <div className="dict-list">{vocabularys}</div>;
+  // TODO CONFIRM MODAL WINDOW
+  const handleDelete = (key: string) => {
+    deleteVocabulary(key);
+    updateLocalStorageData();
+    setDictList((prev) => prev.filter((item) => item !== key));
+  };
+
+  return (
+    <div className="dict-list">
+      {dictlist.map((item) => (
+        <div className="dict-list-item" key={item}>
+          {item}
+          <div className="buttons">
+            <button onClick={() => handleDelete(item)}> delete </button>
+            <button onClick={() => console.log("edit")}> edit </button>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 };
 
 export default DictionariesList;

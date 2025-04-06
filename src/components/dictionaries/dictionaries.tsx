@@ -8,6 +8,7 @@ import "./dictionaries.scss";
 import { addVocabulary, updateLocalStorageData } from "../../data/vocabulary";
 import Modal from "../general/modal/modal";
 import DictionariesList from "./dictionariesList/dictionariesList";
+import NavBar from "../general/navbar/navbar";
 
 const Dictionaries: FC = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -28,6 +29,7 @@ const Dictionaries: FC = () => {
 
   return (
     <div className="dictionary">
+      <NavBar />
       <Modal open={openModal} setOpen={setOpenModal}>
         {<DictionariesList />}
       </Modal>
