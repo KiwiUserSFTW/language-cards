@@ -1,6 +1,6 @@
 // react
 import { FC, useEffect, useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, useSearchParams } from "react-router-dom";
 
 // styles
 import "./cards.scss";
@@ -19,13 +19,13 @@ import TabSwitcher from "../general/tabSwitcher/tabSwitcher";
 
 // types
 import { cardsDataType } from "../../data/vocabulary";
+import NavBar from "../general/navbar/navbar";
 
 const Cards: FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  const selectedId = queryParams.get("id") || "none";
-  const [dictionary, setDictionary] = useState(selectedId);
+  const selectedId = queryParams.get("id") || " ";
 
   const [cardsList, setCardsList] = useState<cardsDataType>({
     name: "apple",
@@ -51,6 +51,8 @@ const Cards: FC = () => {
     setCurrentCard({ value, answer });
   }, [cardsList]);
 
+  const [dictionary, setDictionary] = useState(selectedId);
+
   useEffect(() => {
     if (dictionary) {
       const vocab = getVocabulary(dictionary);
@@ -58,6 +60,7 @@ const Cards: FC = () => {
     }
   }, [dictionary]);
 
+  // TABS
   const dictionariesTabs = Object.keys(getVocabularys()).map((vocabulary) => {
     return {
       name: vocabulary,
@@ -67,9 +70,27 @@ const Cards: FC = () => {
       },
     };
   });
+
+  const [searchParams] = useSearchParams();
+  const id = searchParams.get("id");
+
+  useEffect(() => {
+    for (let i = 0; i < dictionariesTabs.length; i++) {
+      if (id == dictionariesTabs[i].name) {
+        setDictionary(id);
+      } else {
+        setDictionary(dictionariesTabs[0].name);
+      }
+    }
+  }, []);
   return (
     <div className="cards">
-      <TabSwitcher tabs={dictionariesTabs} />
+      <NavBar />
+      <TabSwitcher
+        tabs={dictionariesTabs}
+        activeTab={dictionary}
+        setActiveTab={(name) => setDictionary(name)}
+      />
       <Card
         value={currentCard.value}
         answer={currentCard.answer}

@@ -1,12 +1,13 @@
 // react
-import { FC, useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { FC } from "react";
 
 // styles
 import "./tabSwitcher.scss";
 
 type TabSwitcherType = {
   tabs: tabType[];
+  activeTab: string;
+  setActiveTab: (name: string) => void;
 };
 
 type tabType = {
@@ -14,19 +15,11 @@ type tabType = {
   onClick: () => void;
 };
 
-const TabSwitcher: FC<TabSwitcherType> = ({ tabs }) => {
-  const [activeTab, setActiveTab] = useState(tabs[0].name);
-
-  const [searchParams] = useSearchParams();
-  const id = searchParams.get("id");
-
-  useEffect(() => {
-    for (let i = 0; i < tabs.length; i++) {
-      if (id == tabs[i].name) {
-        setActiveTab(id);
-      }
-    }
-  }, []);
+const TabSwitcher: FC<TabSwitcherType> = ({
+  tabs,
+  activeTab,
+  setActiveTab,
+}) => {
   return (
     <div className="tab-container">
       {tabs.map((tab) => (
