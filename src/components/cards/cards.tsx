@@ -1,5 +1,6 @@
 // react
 import { FC, useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 // styles
 import "./cards.scss";
@@ -9,19 +10,27 @@ const getRandomCard = (cardsList: Record<string, string>) => {
   const entries = Object.entries(cardsList);
   return entries[Math.floor(Math.random() * entries.length)];
 };
+
 import { getVocabulary, getVocabularys } from "../../data/vocabulary";
 
 // components
 import Card from "./card/card";
+import TabSwitcher from "../general/tabSwitcher/tabSwitcher";
 
 // types
 import { cardsDataType } from "../../data/vocabulary";
-import TabSwitcher from "../general/tabSwitcher/tabSwitcher";
-import { useNavigate } from "react-router-dom";
 
 const Cards: FC = () => {
-  const cardsData = getVocabulary("init-vocabulary") || {};
-  const [cardsList, setCardsList] = useState<cardsDataType>(cardsData);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const selectedId = queryParams.get("id") || "none";
+  const [dictionary, setDictionary] = useState(selectedId);
+
+  const [cardsList, setCardsList] = useState<cardsDataType>({
+    name: "apple",
+    answer: "apple",
+  });
   const [currentCard, setCurrentCard] = useState<{
     value: string;
     answer: string;
@@ -29,33 +38,38 @@ const Cards: FC = () => {
     value: "apple",
     answer: "яблуко",
   });
+
   const updateCards = (value: string) => {
-    const { [value]: deletedValue, ...newState } = cardsList;
-    setCardsList(newState);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { [value]: deletedValue, ...newList } = cardsList;
+    setCardsList(newList);
   };
 
-  useEffect(() => {
-    setCardsList({ ...cardsList, newValue: "translate" });
-  }, []);
-
+  // pick next random card
   useEffect(() => {
     const [value, answer] = getRandomCard(cardsList);
     setCurrentCard({ value, answer });
   }, [cardsList]);
 
-  // get rid of
-  const navigate = useNavigate();
+  useEffect(() => {
+    if (dictionary) {
+      const vocab = getVocabulary(dictionary);
+      setCardsList(vocab);
+    }
+  }, [dictionary]);
 
-  const navigateTo = (name: string) => {
-    navigate("?id=" + name);
-  };
-
-  const tabs = Object.keys(getVocabularys()).map((vocabulary) => {
-    return { name: vocabulary, onClick: () => navigateTo(vocabulary) };
+  const dictionariesTabs = Object.keys(getVocabularys()).map((vocabulary) => {
+    return {
+      name: vocabulary,
+      onClick: () => {
+        navigate("?id=" + vocabulary);
+        setDictionary(vocabulary);
+      },
+    };
   });
   return (
     <div className="cards">
-      <TabSwitcher tabs={tabs} />
+      <TabSwitcher tabs={dictionariesTabs} />
       <Card
         value={currentCard.value}
         answer={currentCard.answer}

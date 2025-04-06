@@ -1,5 +1,5 @@
 // react
-import { FC, ReactNode, useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
 // styles
@@ -14,9 +14,8 @@ type tabType = {
   onClick: () => void;
 };
 
-const TabSwitcher: FC<TabSwitcherType> = ({ tabs: tabsData }) => {
-  const [tabs, setTabs] = useState(tabsData);
-  const [activeTab, setActiveTab] = useState(tabsData[0].name);
+const TabSwitcher: FC<TabSwitcherType> = ({ tabs }) => {
+  const [activeTab, setActiveTab] = useState(tabs[0].name);
 
   const [searchParams] = useSearchParams();
   const id = searchParams.get("id");

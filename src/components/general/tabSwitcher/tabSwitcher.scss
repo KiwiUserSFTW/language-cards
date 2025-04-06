@@ -5,6 +5,7 @@
         border: 1px solid grey;
         border-radius: 5px;
         cursor: pointer;
+        font-size: 30px;
     }
 
     position: absolute;
@@ -13,6 +14,6 @@
     color: white;
 
     .active {
-        color: rgb(155, 87, 87);
+        color: #77ae4f;
     }
 }

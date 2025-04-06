@@ -73,7 +73,9 @@ export const deleteVocabulary = (key: string) => {
 export const getVocabulary = (key: string) => {
   if (!vocabulary[key]) {
     console.error(`Vocabulary with key "${key}" does not exist.`);
-    return;
+
+    const firstKey = Object.keys(vocabulary)[0];
+    return vocabulary[firstKey] || initialDictionaries["init-vocabulary"];
   }
   return vocabulary[key];
 };
