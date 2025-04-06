@@ -3,32 +3,33 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 350px;
   padding: 30px;
+  min-width: 350px;
   border: 1px solid #d2f898;
   border-radius: 24px;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.05);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
-
   &-title {
     color: #6aa83c;
-    font-size: 1.8rem;
+    font-size: 60px;
     margin-bottom: 16px;
     font-weight: 600;
     text-align: center;
+    padding-bottom: 30px;
   }
-
+  
   &-answer-input {
     display: flex;
     gap: 16px;
     height: 40px;
     margin-top: 12px;
-
+    
     input {
+      font-size: 50px;
       border: 1px solid #d2f898;
       border-radius: 12px;
       padding: 8px 12px;
-      font-size: 1rem;
+      font-size: 1.3rem;
       transition: border-color 0.2s ease;
 
       &:focus {
@@ -45,7 +46,7 @@
       padding: 0 16px;
       cursor: pointer;
       transition: background-color 0.2s ease;
-
+      font-size: 15px;
       &:hover {
         background-color: #578a30;
       }

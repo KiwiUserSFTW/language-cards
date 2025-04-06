@@ -25,3 +25,10 @@ HTML / SCSS / React / Typescript / Router
     - [x] random drop word and input 
     - [x] answer calculating
     - [x] styling
+- [x] git vocabulary
+   - [x] add/remove functionality
+   - [x] create database
+   - [ ] dictionaries page
+      - [ ] drag&drop add
+      - [ ] page with add or custom exist vocabulary from site
+      - [ ] save vocabulary in local storage
