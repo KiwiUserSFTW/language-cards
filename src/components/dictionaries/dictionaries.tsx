@@ -7,7 +7,7 @@ import "./dictionaries.scss";
 // database
 import { addVocabulary, updateLocalStorageData } from "../../data/vocabulary";
 import Modal from "../general/modal/modal";
-import DictionariesList from "./dictionariesList/dictionariesList";
+import DictionariesList from "./dictionariesModalList/dictionariesList";
 import NavBar from "../general/navbar/navbar";
 
 const Dictionaries: FC = () => {

@@ -4,7 +4,7 @@ import { FC } from "react";
 // styles
 import "./tabSwitcher.scss";
 
-type TabSwitcherType = {
+export type TabSwitcherType = {
   tabs: tabType[];
   activeTab: string;
   setActiveTab: (name: string) => void;

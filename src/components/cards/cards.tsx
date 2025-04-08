@@ -1,6 +1,6 @@
 // react
 import { FC, useEffect, useState } from "react";
-import { useNavigate, useLocation, useSearchParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 // styles
 import "./cards.scss";
@@ -11,18 +11,17 @@ const getRandomCard = (cardsList: Record<string, string>) => {
   return entries[Math.floor(Math.random() * entries.length)];
 };
 
-import { getVocabulary, getVocabularys } from "../../data/vocabulary";
+import { getVocabulary } from "../../data/vocabulary";
 
 // components
 import Card from "./card/card";
-import TabSwitcher from "../general/tabSwitcher/tabSwitcher";
 
 // types
 import { cardsDataType } from "../../data/vocabulary";
 import NavBar from "../general/navbar/navbar";
+import DictionariesNavList from "../dictionaries/dictionariesNavList/dictionariesNavList";
 
 const Cards: FC = () => {
-  const navigate = useNavigate();
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const selectedId = queryParams.get("id") || " ";
@@ -60,36 +59,12 @@ const Cards: FC = () => {
     }
   }, [dictionary]);
 
-  // TABS
-  const dictionariesTabs = Object.keys(getVocabularys()).map((vocabulary) => {
-    return {
-      name: vocabulary,
-      onClick: () => {
-        navigate("?id=" + vocabulary);
-        setDictionary(vocabulary);
-      },
-    };
-  });
-
-  const [searchParams] = useSearchParams();
-  const id = searchParams.get("id");
-
-  useEffect(() => {
-    for (let i = 0; i < dictionariesTabs.length; i++) {
-      if (id == dictionariesTabs[i].name) {
-        setDictionary(id);
-      } else {
-        setDictionary(dictionariesTabs[0].name);
-      }
-    }
-  }, []);
   return (
     <div className="cards">
       <NavBar />
-      <TabSwitcher
-        tabs={dictionariesTabs}
-        activeTab={dictionary}
-        setActiveTab={(name) => setDictionary(name)}
+      <DictionariesNavList
+        activeDictionary={dictionary}
+        setActiveDictionary={(name) => setDictionary(name)}
       />
       <Card
         value={currentCard.value}
