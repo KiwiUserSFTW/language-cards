@@ -10,11 +10,23 @@ type CardPropsType = {
   updateCards: (value: string) => void;
 };
 
+// utils
+import { AnswerChecker } from "../../../utils/AnswerChecker";
+
+enum animationColors {
+  BLUE = "shadow-blue",
+  YELLOW = "shadow-yellow",
+  RED = "shadow-red",
+  NO_ANIMATION = "",
+}
+
 const Card: FC<CardPropsType> = ({ value, answer, updateCards }) => {
   const [input, setInput] = useState("");
-  const [updateCardsAnimation, setUpdateCardsAnimation] = useState<
-    boolean | null
-  >(null);
+  const [cardsAnimation, setCardsAnimation] = useState<string>(
+    animationColors.NO_ANIMATION
+  );
+
+  const checker = new AnswerChecker();
 
   const handleEnterPress = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
@@ -24,29 +36,27 @@ const Card: FC<CardPropsType> = ({ value, answer, updateCards }) => {
   };
 
   const handleClick = () => {
-    if (input === answer) {
+    const answerIsRight = checker.isSimilar(input, answer);
+    const confirm = () => {
       updateCards(value);
       setInput("");
-      setUpdateCardsAnimation(true);
+    };
+    if (input === answer) {
+      confirm();
+      setCardsAnimation(animationColors.BLUE);
+    } else if (input !== answer && answerIsRight) {
+      confirm();
+      setCardsAnimation(animationColors.YELLOW);
     } else {
-      setUpdateCardsAnimation(false);
+      setCardsAnimation(animationColors.RED);
     }
     setTimeout(() => {
-      setUpdateCardsAnimation(null);
+      setCardsAnimation(animationColors.NO_ANIMATION);
     }, 1000);
   };
 
-  const animationValidate = () => {
-    if (updateCardsAnimation) {
-      return "shadow-blue";
-    } else if (updateCardsAnimation === false) {
-      return "shadow-red";
-    } else {
-      return " ";
-    }
-  };
   return (
-    <div className={`card shadow ${animationValidate()}`}>
+    <div className={`card shadow ${cardsAnimation}`}>
       <p className="card-title">{value}</p>
       <div className="card-answer-input">
         <input

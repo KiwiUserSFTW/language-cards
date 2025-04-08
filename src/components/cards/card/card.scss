@@ -61,6 +61,10 @@
   box-shadow: 0 0 15px $color-shadow-blue;
 }
 
+.shadow-yellow {
+  box-shadow: 0 0 15px $color-shadow-yellow;
+}
+
 .shadow {
   transition: $transition-slow;
 }
