@@ -19,6 +19,7 @@ const DictionariesList: FC = () => {
     setDictList(Object.keys(vocab));
   }, []);
 
+  
   // TODO CONFIRM MODAL WINDOW
   const handleDelete = (key: string) => {
     deleteVocabulary(key);
