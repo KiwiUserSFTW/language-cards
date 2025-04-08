@@ -20,15 +20,14 @@
 
   &-answer-input {
     display: flex;
-    gap: 16px;
-    height: 40px;
+    gap: 15px;
 
     input {
       font-size: $font-size-xlarge;
       border: 1px solid $color-primary;
       border-radius: $border-radius-medium;
-      padding: 10px 10px;
-      font-size: 1.3rem;
+      padding: $pading-xmedium;
+      font-size: $font-size-base;
       transition: border-color 0.2s ease;
 
       &:focus {
@@ -45,7 +44,7 @@
       padding: 0 15px;
       cursor: pointer;
       transition: background-color 0.2s ease;
-      font-size: $font-size-small;
+      font-size: $font-size-base;
       &:hover {
         background-color: #578a30;
       }
