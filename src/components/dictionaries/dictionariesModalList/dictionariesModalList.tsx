@@ -2,7 +2,7 @@
 import { FC, useEffect, useState } from "react";
 
 // styles
-import "./dictionariesList.scss";
+import "./dictionariesModalList.scss";
 
 // database
 import {
@@ -10,7 +10,7 @@ import {
   getVocabularys,
   updateLocalStorageData,
   addVocabulary,
-} from "../../../data/vocabulary";
+} from "@data/vocabulary";
 
 const DictionariesList: FC = () => {
   const [dictlist, setDictList] = useState<string[]>([]);

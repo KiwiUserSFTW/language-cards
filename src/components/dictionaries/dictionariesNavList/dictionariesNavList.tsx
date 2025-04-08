@@ -3,7 +3,7 @@ import { FC, useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 
 // database
-import { getVocabularys } from "../../../data/vocabulary";
+import { getVocabularys } from "@data/vocabulary";
 
 // styles
 import "./dictionariesNavList.scss";
@@ -11,7 +11,7 @@ import TabSwitcher from "../../general/tabSwitcher/tabSwitcher";
 import Modal from "../../general/modal/modal";
 
 // components
-import DictionariesList from "../dictionariesModalList/dictionariesList";
+import DictionariesList from "../dictionariesModalList/dictionariesModalList";
 
 type DictionariesNavListType = {
   activeDictionary: string;
