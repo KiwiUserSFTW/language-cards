@@ -9,6 +9,7 @@ import {
   deleteVocabulary,
   getVocabularys,
   updateLocalStorageData,
+  addVocabulary,
 } from "../../../data/vocabulary";
 
 const DictionariesList: FC = () => {
@@ -26,6 +27,18 @@ const DictionariesList: FC = () => {
     setDictList((prev) => prev.filter((item) => item !== key));
   };
 
+  const handleUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+    const fileName = file.name.split(".")[0];
+    const text = await file.text();
+    const json = JSON.parse(text);
+
+    addVocabulary(fileName, json);
+    updateLocalStorageData();
+    setDictList((prev) => [...prev, fileName]);
+  };
+
   return (
     <div className="dict-list">
       {dictlist.map((item) => (
@@ -37,6 +50,19 @@ const DictionariesList: FC = () => {
           </div>
         </div>
       ))}
+      <div className="dict-list-item" key="extra-button">
+        <div className="dictionary-import">
+          <label htmlFor="input">Upload new dictionary (json)</label>
+          <input
+            id="input"
+            name="input"
+            type="file"
+            accept=".json"
+            multiple
+            onChange={(event) => handleUpload(event)}
+          />
+        </div>
+      </div>
     </div>
   );
 };

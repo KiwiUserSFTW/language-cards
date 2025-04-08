@@ -17,19 +17,4 @@
     background-color: transparent;
     font-family: "Courier New", Courier, monospace;
   }
-  &-import {
-    display: flex;
-    border: 1px solid rgb(22, 170, 22);
-    border-radius: 4px;
-    padding: 6px 12px;
-    cursor: pointer;
-    font-size: 54px;
-  }
-
-  label {
-    cursor: pointer;
-  }
-  input {
-    display: none;
-  }
 }
