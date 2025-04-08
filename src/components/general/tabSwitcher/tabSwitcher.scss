@@ -2,13 +2,13 @@
   .tab {
     padding: 5px;
     margin: 10px;
-    border: 1px solid grey;
-    border-radius: 5px;
+    border: 1px solid $color-border;
+    border-radius: $border-radius-medium;
     cursor: pointer;
     font-size: 30px;
 
     &-button {
-      color: rgb(161, 49, 161);
+      color: $color-accent-light;
     }
   }
 
@@ -18,6 +18,6 @@
   color: white;
 
   .active {
-    color: #77ae4f;
+    color: $color-primary;
   }
 }
