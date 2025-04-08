@@ -9,6 +9,7 @@ import { getVocabularys } from "../../../data/vocabulary";
 import "./dictionariesNavList.scss";
 import TabSwitcher from "../../general/tabSwitcher/tabSwitcher";
 
+
 type DictionariesNavListType = {
   activeDictionary: string;
   setActiveDictionary: (name: string) => void;
