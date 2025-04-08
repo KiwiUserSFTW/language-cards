@@ -1,0 +1,45 @@
+// Colors
+$color-primary: #6aa83c;
+$color-primary-hover: #578a30;
+$color-accent: rgb(147, 41, 147);
+$color-accent-light: rgb(161, 49, 161);
+$color-danger: #de6b74;
+$color-success: #2a9d8f;
+$color-border: grey;
+$color-white: #ffffff;
+$color-background: #d2f898;
+$color-background-global: #2f2f2f;
+
+$color-shadow-red: rgba(255, 0, 0, 0.8);
+$color-shadow-blue: rgba(0, 123, 255, 0.8);
+
+// Border Radius
+$border-radius-small: 0.25rem;
+$border-radius-medium: 0.625rem;
+$border-radius-large: 1.5rem;
+
+// Padding
+$padding-small: 0.3125rem; // 5px
+$padding-medium: 0.625rem; // 10px
+$padding-large: 1.875rem; // 30px
+
+// Font sizes
+$font-size-small: 0.9375rem; // 15px
+$font-size-base: 1.5625rem; // 25px
+$font-size-medium: 1.875rem; // 30px
+$font-size-large: 2.375rem; // 38px
+$font-size-xlarge: 3.125rem; // 50px
+$font-size-title: 3.75rem; // 60px
+
+// Fonts
+$font-mono: "Courier New", Courier, monospace;
+$font-alt: monospace;
+$font-weight-bold: 600;
+
+// Cursor
+$cursor-pointer: pointer;
+
+// Transition
+$transition-fast: 0.2s ease;
+$transition-medium: 0.3s ease;
+$transition-slow: 1s;

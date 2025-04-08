@@ -1,0 +1,58 @@
+.dict-list {
+  display: flex;
+  flex-direction: column;
+  font-size: $font-size-large;
+
+  &-item {
+    gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Courier New", Courier, monospace;
+    margin: 5px;
+    padding: $padding-medium;
+    border: 1px solid $color-border;
+    border-radius: $border-radius-medium;
+    .buttons {
+      display: flex;
+      gap: 10px;
+
+      button {
+        border: 1px solid $color-border;
+        border-radius: 4px;
+        font-family: monospace;
+        font-size: 25px;
+        cursor: pointer;
+      }
+      button:first-child {
+        background-color: #de6b74;
+      }
+
+      button:last-child {
+        background-color: #2a9d8f;
+      }
+    }
+  }
+}
+
+.dictionary-import {
+  flex: 1;
+  font-size: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(147, 41, 147);
+  &-import {
+    display: flex;
+    cursor: pointer;
+  }
+
+  label {
+    font-size: 38px;
+    cursor: pointer;
+  }
+  input {
+    display: none;
+  }
+}

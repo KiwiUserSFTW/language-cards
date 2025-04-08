@@ -11,15 +11,14 @@ const getRandomCard = (cardsList: Record<string, string>) => {
   return entries[Math.floor(Math.random() * entries.length)];
 };
 
-import { getVocabulary } from "../../data/vocabulary";
+import { getVocabulary } from "@data/vocabulary";
 
 // components
 import Card from "./card/card";
+import DictionariesNavList from "@components/dictionaries/dictionariesNavList/dictionariesNavList";
 
 // types
-import { cardsDataType } from "../../data/vocabulary";
-import NavBar from "../general/navbar/navbar";
-import DictionariesNavList from "../dictionaries/dictionariesNavList/dictionariesNavList";
+import { cardsDataType } from "@data/vocabulary";
 
 const Cards: FC = () => {
   const location = useLocation();
@@ -61,7 +60,6 @@ const Cards: FC = () => {
 
   return (
     <div className="cards">
-      <NavBar />
       <DictionariesNavList
         activeDictionary={dictionary}
         setActiveDictionary={(name) => setDictionary(name)}
