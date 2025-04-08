@@ -12,6 +12,7 @@ export type TabSwitcherType = {
 
 type tabType = {
   name: string;
+  button?: boolean;
   onClick: () => void;
 };
 
@@ -28,9 +29,12 @@ const TabSwitcher: FC<TabSwitcherType> = ({
           onClick={() => {
             if (activeTab === tab.name) return;
             tab.onClick();
+            if (tab.button) return;
             setActiveTab(tab.name);
           }}
-          className={`tab ${activeTab === tab.name ? "active" : ""}`}
+          className={`tab ${activeTab === tab.name ? "active" : ""} ${
+            tab.button ? "tab-button" : ""
+          }`}
         >
           {tab.name}
         </div>

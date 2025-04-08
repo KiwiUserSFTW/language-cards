@@ -18,7 +18,6 @@ import Card from "./card/card";
 
 // types
 import { cardsDataType } from "../../data/vocabulary";
-import NavBar from "../general/navbar/navbar";
 import DictionariesNavList from "../dictionaries/dictionariesNavList/dictionariesNavList";
 
 const Cards: FC = () => {
@@ -61,7 +60,6 @@ const Cards: FC = () => {
 
   return (
     <div className="cards">
-      <NavBar />
       <DictionariesNavList
         activeDictionary={dictionary}
         setActiveDictionary={(name) => setDictionary(name)}

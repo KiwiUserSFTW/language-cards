@@ -1,19 +1,23 @@
 .tab-container {
-    .tab {
-        padding: 5px;
-        margin: 10px;
-        border: 1px solid grey;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 30px;
-    }
+  .tab {
+    padding: 5px;
+    margin: 10px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 30px;
 
-    position: absolute;
-    top:10px;
-    right: 10px;
-    color: white;
-
-    .active {
-        color: #77ae4f;
+    &-button {
+      color: rgb(161, 49, 161);
     }
+  }
+
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+
+  .active {
+    color: #77ae4f;
+  }
 }
