@@ -63,11 +63,13 @@ const DictionariesNavList: FC<DictionariesNavListType> = ({
       <Modal open={modalIsOpen} setOpen={setModalIsOpen}>
         {<DictionariesList />}
       </Modal>
-      <TabSwitcher
-        tabs={dictionariesTabs}
-        activeTab={activeDictionary}
-        setActiveTab={(name) => setActiveDictionary(name)}
-      />
+      <div className="dict-nav-list">
+        <TabSwitcher
+          tabs={dictionariesTabs}
+          activeTab={activeDictionary}
+          setActiveTab={(name) => setActiveDictionary(name)}
+        />
+      </div>
     </div>
   );
 };

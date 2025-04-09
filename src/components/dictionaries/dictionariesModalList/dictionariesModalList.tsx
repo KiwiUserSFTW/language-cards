@@ -43,7 +43,7 @@ const DictionariesList: FC = () => {
     <div className="dict-list">
       {dictlist.map((item) => (
         <div className="dict-list-item" key={item}>
-          {item}
+          <div className="dict-list-item-title">{item}</div>
           <div className="buttons">
             <button onClick={() => handleDelete(item)}> delete </button>
             <button onClick={() => console.log("edit")}> edit </button>

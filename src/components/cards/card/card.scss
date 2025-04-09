@@ -67,3 +67,30 @@
 .shadow {
   transition: $transition-slow;
 }
+
+@media (max-width: 768px) {
+  .card {
+    padding: $padding-medium;
+
+    &-title {
+      font-size: $font-size-large;
+    }
+
+    &-answer-input {
+      flex-direction: column;
+      gap: 10px;
+
+      input {
+        font-size: $font-size-base;
+        padding: $padding-small;
+      }
+
+      button {
+        width: 100%;
+        font-size: $font-size-base;
+        padding: $padding-small;
+        
+      }
+    }
+  }
+}
