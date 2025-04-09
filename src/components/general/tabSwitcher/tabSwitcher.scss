@@ -5,7 +5,7 @@
     border: 1px solid $color-border;
     border-radius: $border-radius-medium;
     cursor: pointer;
-    font-size: 30px;
+    font-size: $font-size-medium;
 
     &-button {
       color: $color-accent-light;
@@ -16,8 +16,18 @@
   top: 10px;
   right: 10px;
   color: white;
-
+  box-shadow: 0 2px 2px -2px $color-border;
+  border-radius: $border-radius-large;
   .active {
     color: $color-primary;
+  }
+}
+
+@media (max-width: 768px) {
+  .tab-container {
+    width: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
