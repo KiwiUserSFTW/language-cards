@@ -51,7 +51,9 @@ const DictionariesNavList: FC<DictionariesNavListType> = ({
   useEffect(() => {
     for (let i = 0; i < dictionariesTabs.length; i++) {
       if (id == dictionariesTabs[i].name) {
+        console.log(id, "ID");
         setActiveDictionary(id);
+        return;
       } else {
         setActiveDictionary(dictionariesTabs[0].name);
       }
