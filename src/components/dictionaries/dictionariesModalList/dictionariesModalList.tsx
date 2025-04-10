@@ -12,7 +12,7 @@ import {
   addVocabulary,
 } from "@data/vocabulary";
 
-const DictionariesList: FC = () => {
+const DictionariesModalList: FC = () => {
   const [dictlist, setDictList] = useState<string[]>([]);
 
   useEffect(() => {
@@ -67,4 +67,4 @@ const DictionariesList: FC = () => {
   );
 };
 
-export default DictionariesList;
+export default DictionariesModalList;

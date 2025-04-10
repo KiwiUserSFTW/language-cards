@@ -11,7 +11,7 @@ import TabSwitcher from "../../general/tabSwitcher/tabSwitcher";
 import Modal from "../../general/modal/modal";
 
 // components
-import DictionariesList from "../dictionariesModalList/dictionariesModalList";
+import DictionariesModalList from "../dictionariesModalList/dictionariesModalList";
 
 type DictionariesNavListType = {
   activeDictionary: string;
@@ -61,7 +61,7 @@ const DictionariesNavList: FC<DictionariesNavListType> = ({
   return (
     <div>
       <Modal open={modalIsOpen} setOpen={setModalIsOpen}>
-        {<DictionariesList />}
+        {<DictionariesModalList />}
       </Modal>
       <div className="dict-nav-list">
         <TabSwitcher
