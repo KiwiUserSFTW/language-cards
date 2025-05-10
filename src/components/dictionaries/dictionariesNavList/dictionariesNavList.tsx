@@ -11,7 +11,7 @@ import TabSwitcher from "../../general/tabSwitcher/tabSwitcher";
 import Modal from "../../general/modal/modal";
 
 // components
-import DictionariesList from "../dictionariesModalList/dictionariesModalList";
+import DictionariesModalList from "../dictionariesModalList/dictionariesModalList";
 
 type DictionariesNavListType = {
   activeDictionary: string;
@@ -51,7 +51,9 @@ const DictionariesNavList: FC<DictionariesNavListType> = ({
   useEffect(() => {
     for (let i = 0; i < dictionariesTabs.length; i++) {
       if (id == dictionariesTabs[i].name) {
+        console.log(id, "ID");
         setActiveDictionary(id);
+        return;
       } else {
         setActiveDictionary(dictionariesTabs[0].name);
       }
@@ -61,13 +63,15 @@ const DictionariesNavList: FC<DictionariesNavListType> = ({
   return (
     <div>
       <Modal open={modalIsOpen} setOpen={setModalIsOpen}>
-        {<DictionariesList />}
+        {<DictionariesModalList />}
       </Modal>
-      <TabSwitcher
-        tabs={dictionariesTabs}
-        activeTab={activeDictionary}
-        setActiveTab={(name) => setActiveDictionary(name)}
-      />
+      <div className="dict-nav-list">
+        <TabSwitcher
+          tabs={dictionariesTabs}
+          activeTab={activeDictionary}
+          setActiveTab={(name) => setActiveDictionary(name)}
+        />
+      </div>
     </div>
   );
 };
