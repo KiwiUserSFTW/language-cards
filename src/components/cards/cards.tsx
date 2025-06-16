@@ -26,9 +26,10 @@ const Cards: FC = () => {
   const selectedId = queryParams.get("id") || " ";
 
   const [cardsList, setCardsList] = useState<cardsDataType>({
-    name: "apple",
-    answer: "apple",
+    apple: "яблуко",
+    banana: "банан",
   });
+  console.log(cardsList)
   const [currentCard, setCurrentCard] = useState<{
     value: string;
     answer: string;
@@ -38,7 +39,6 @@ const Cards: FC = () => {
   });
 
   const updateCards = (value: string) => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { [value]: deletedValue, ...newList } = cardsList;
     setCardsList(newList);
   };

@@ -11,6 +11,8 @@ import {
   updateLocalStorageData,
   addVocabulary,
 } from "@data/vocabulary";
+import DictionariesListUploadButton from "./dictionariesListUploadButton/dictionariesListUploadButton";
+import DictionariesListItem from "./dictionariesListItem/dictionariesListItem";
 
 const DictionariesModalList: FC = () => {
   const [dictlist, setDictList] = useState<string[]>([]);
@@ -41,28 +43,8 @@ const DictionariesModalList: FC = () => {
 
   return (
     <div className="dict-list">
-      {dictlist.map((item) => (
-        <div className="dict-list-item" key={item}>
-          <div className="dict-list-item-title">{item}</div>
-          <div className="buttons">
-            <button onClick={() => handleDelete(item)}> delete </button>
-            <button onClick={() => console.log("edit")}> edit </button>
-          </div>
-        </div>
-      ))}
-      <div className="dict-list-item" key="extra-button">
-        <div className="dictionary-import">
-          <label htmlFor="input">Upload new dictionary (json)</label>
-          <input
-            id="input"
-            name="input"
-            type="file"
-            accept=".json"
-            multiple
-            onChange={(event) => handleUpload(event)}
-          />
-        </div>
-      </div>
+      <DictionariesListItem dictlist={dictlist} handleDelete={handleDelete} />
+      <DictionariesListUploadButton handleUpload={handleUpload} />
     </div>
   );
 };
