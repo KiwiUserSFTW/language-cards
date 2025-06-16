@@ -8,7 +8,7 @@ import Cards from "@components/cards/cards";
 const Router: FC = () => (
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Navigate to="/cards" replace />} />
+      <Route path="/" element={<Navigate to="/cards" />} />
       <Route path="/cards" element={<Cards />} />
     </Routes>
   </BrowserRouter>
