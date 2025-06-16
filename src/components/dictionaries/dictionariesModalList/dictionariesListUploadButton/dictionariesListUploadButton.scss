@@ -1,0 +1,32 @@
+.dictionary-import {
+  flex: 1;
+  font-size: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+  font-family: $font-alt;
+  color: $color-accent;
+
+  &-import {
+    display: flex;
+    cursor: pointer;
+  }
+
+  label {
+    font-size: 38px;
+    cursor: pointer;
+    font-family: $font-alt;
+  }
+  input {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .dictionary-import {
+    label {
+      font-size: $font-size-base;
+    }
+  }
+}

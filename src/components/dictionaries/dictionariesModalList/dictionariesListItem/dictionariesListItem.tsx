@@ -1,3 +1,6 @@
+// styles
+import "./dictionariesListItem.scss";
+
 // react
 import { FC } from "react";
 
