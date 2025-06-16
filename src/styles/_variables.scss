@@ -1,5 +1,6 @@
 // Colors
 $color-primary: #6aa83c;
+// contrast $color-primary: #86c744;
 $color-primary-hover: #578a30;
 $color-accent: rgb(147, 41, 147);
 $color-accent-light: rgb(161, 49, 161);
@@ -12,7 +13,8 @@ $color-background-global: #2f2f2f;
 
 $color-shadow-red: rgba(255, 0, 0, 0.8);
 $color-shadow-blue: rgba(0, 123, 255, 0.8);
-$color-shadow-yellow:rgb(212, 218, 30);
+$color-shadow-yellow: rgb(212, 218, 30);
+
 // Border Radius
 $border-radius-small: 0.25rem;
 $border-radius-medium: 0.625rem;
@@ -26,7 +28,9 @@ $padding-large: 1.875rem; // 30px
 
 // Font sizes
 $font-size-small: 0.9375rem; // 15px
+$font-size-xsmall: 1.25rem; // 20px
 $font-size-base: 1.5625rem; // 25px
+$font-size-xbase: 1.66rem; // 28px
 $font-size-medium: 1.875rem; // 30px
 $font-size-large: 2.375rem; // 38px
 $font-size-xlarge: 3.125rem; // 50px
@@ -34,9 +38,12 @@ $font-size-title: 3.75rem; // 60px
 
 // Fonts
 $font-mono: "Courier New", Courier, monospace;
+$font-prime: "Courier Prime", monospace;
 $font-alt: monospace;
-$font-weight-bold: 600;
 
+// Fonts weight
+$font-weight-bold: 600;
+$font-weight-regular: 400;
 // Cursor
 $cursor-pointer: pointer;
 

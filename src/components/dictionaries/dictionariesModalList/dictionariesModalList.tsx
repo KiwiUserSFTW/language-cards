@@ -12,7 +12,7 @@ import {
   addVocabulary,
 } from "@data/vocabulary";
 
-const DictionariesList: FC = () => {
+const DictionariesModalList: FC = () => {
   const [dictlist, setDictList] = useState<string[]>([]);
 
   useEffect(() => {
@@ -43,7 +43,7 @@ const DictionariesList: FC = () => {
     <div className="dict-list">
       {dictlist.map((item) => (
         <div className="dict-list-item" key={item}>
-          {item}
+          <div className="dict-list-item-title">{item}</div>
           <div className="buttons">
             <button onClick={() => handleDelete(item)}> delete </button>
             <button onClick={() => console.log("edit")}> edit </button>
@@ -67,4 +67,4 @@ const DictionariesList: FC = () => {
   );
 };
 
-export default DictionariesList;
+export default DictionariesModalList;
