@@ -29,7 +29,6 @@ const Cards: FC = () => {
     apple: "яблуко",
     banana: "банан",
   });
-  console.log(cardsList)
   const [currentCard, setCurrentCard] = useState<{
     value: string;
     answer: string;
@@ -39,6 +38,7 @@ const Cards: FC = () => {
   });
 
   const updateCards = (value: string) => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { [value]: deletedValue, ...newList } = cardsList;
     setCardsList(newList);
   };

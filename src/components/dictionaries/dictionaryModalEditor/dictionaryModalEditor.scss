@@ -1,0 +1,114 @@
+.dict-list-item-editor {
+    display: flex;
+    left: 0;
+    top: 0;
+    flex-direction: column;
+    gap: $padding-small;
+    padding: $pading-xmedium;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    font-size: $font-size-base;
+    font-family: $font-prime;
+    height: 30vh;
+    overflow-y: scroll;
+    width: auto;
+    font-family: $font-alt;
+
+
+
+    &-element {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: space-between;
+        gap: $padding-medium;
+        padding: $pading-xmedium;
+        font-size: $font-size-base;
+        font-weight: $font-weight-regular;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 1px;
+            width: 100%;
+            border-top: 2px dashed $color-border;
+        }
+
+        &:first-child::before {
+            content: none;
+        }
+
+
+        &-name {
+            flex: 1;
+            color: $color-primary;
+            font-weight: $font-weight-regular;
+
+
+        }
+
+        &-answer {
+
+            flex: 3;
+
+            input {
+                width: 80%;
+                padding: $padding-small $padding-medium;
+                border: 1px solid $color-primary;
+                border-radius: $border-radius-medium;
+                font-size: $font-size-base;
+                font-family: $font-prime;
+                transition: border-color $transition-fast, box-shadow $transition-fast;
+                background-color: $color-white;
+                color: $color-background-global;
+
+                &:focus {
+                    border-color: $color-primary-hover;
+                    box-shadow: 0 0 0 2px rgba(106, 168, 60, 0.3);
+                    outline: none;
+                }
+            }
+        }
+
+        &-delete {
+            margin-left: auto;
+
+            button {
+                border: 1px solid $color-border;
+                border-radius: 4px;
+                font-family: $font-alt;
+                font-size: $font-size-base;
+                cursor: pointer;
+                background-color: #de6b74;
+            }
+        }
+    }
+}
+
+.dict-list-item-editor-save button {
+    background-color: #2a9d8f;
+    color: black;
+    padding: $padding-medium $padding-large;
+    border: none;
+    border-radius: $border-radius-small;
+    font-size: $font-size-base;
+    font-weight: $font-weight-regular;
+    width: 100%;
+    cursor: $cursor-pointer;
+    transition: background-color $transition-fast, box-shadow $transition-fast;
+
+    &:hover {
+        background-color: darken($color-success, 10%);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba($color-success, 0.3);
+    }
+}

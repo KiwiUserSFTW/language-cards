@@ -52,6 +52,7 @@ if (localstorageDictionaries) {
   vocabulary = localstorageDictionaries;
 }
 // Vocabulary database actions
+// add new vocabulary
 export const addVocabulary = (key: string, value: cardsDataType) => {
   if (vocabulary[key]) {
     console.error(`Vocabulary with key "${key}" already exists.`);
@@ -60,6 +61,7 @@ export const addVocabulary = (key: string, value: cardsDataType) => {
   vocabulary = { ...vocabulary, [key]: value };
 };
 // TODO create error Messages file
+// delete exist vocabulary
 export const deleteVocabulary = (key: string) => {
   if (!vocabulary[key]) {
     console.error(`Vocabulary with key "${key}" does not exist.`);
@@ -69,7 +71,19 @@ export const deleteVocabulary = (key: string) => {
   const { [key]: _deleted, ...newVocabulary } = vocabulary;
   vocabulary = newVocabulary;
 };
-
+// replace vocabulary
+export const replaceVocabulary = (
+  key: string,
+  newVocabulary: cardsDataType
+) => {
+  if (!vocabulary[key]) {
+    console.error(`Vocabulary with key "${key}" does not exist.`);
+    return;
+  }
+  vocabulary[key] = { ...newVocabulary };
+  console.log(vocabulary);
+};
+// get vocabulary
 export const getVocabulary = (key: string) => {
   if (!vocabulary[key]) {
     console.error(`Vocabulary with key "${key}" does not exist.`);
@@ -79,7 +93,7 @@ export const getVocabulary = (key: string) => {
   }
   return vocabulary[key];
 };
-
+// get vocabularys
 export const getVocabularys = () => {
   return vocabulary;
 };
