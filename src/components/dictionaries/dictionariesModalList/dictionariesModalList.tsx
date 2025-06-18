@@ -29,9 +29,21 @@ const DictionariesModalList: FC = () => {
     setDictList((prev) => prev.filter((item) => item !== key));
   };
 
-  const handleUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
+  enum uploadEvents {
+    DATATRANSFER = "dataTransfer",
+    TARGET = "target",
+  }
+  const handleUpload = async (
+    event: React.ChangeEvent<HTMLInputElement> | React.DragEvent<HTMLDivElement>
+  ) => {
+    const files =
+      uploadEvents.DATATRANSFER in event
+        ? event.dataTransfer?.files
+        : event.target.files;
+
+    const file = files?.[0];
     if (!file) return;
+
     const fileName = file.name.split(".")[0];
     const text = await file.text();
     const json = JSON.parse(text);

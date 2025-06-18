@@ -18,6 +18,12 @@
     cursor: pointer;
     font-family: $font-alt;
   }
+  p {
+    font-size: 20px;
+    position: absolute;
+    top: -25px;
+    right: 0;
+  }
   input {
     display: none;
   }
@@ -27,6 +33,10 @@
   .dictionary-import {
     label {
       font-size: $font-size-base;
+    }
+    p {
+      font-size: 15px;
+      top: -20px;
     }
   }
 }
