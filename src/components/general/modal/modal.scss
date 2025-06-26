@@ -27,8 +27,9 @@
 }
 
 .modal-content {
-  background-color: white;
+  background-color: $color-background-global;
   padding: $padding-medium;
+  border: 2px solid $color-accent;
   border-radius: 9px;
   transition: transform 0.3s ease;
 }

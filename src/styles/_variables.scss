@@ -1,15 +1,15 @@
 // Colors
-$color-primary: #6aa83c;
+$color-primary: #5eb89f;
 // contrast $color-primary: #86c744;
 $color-primary-hover: #578a30;
-$color-accent: rgb(147, 41, 147);
+$color-accent: #8d81d4;
 $color-accent-light: rgb(161, 49, 161);
 $color-danger: #de6b74;
-$color-success: #2a9d8f;
+$color-success: #5eb89f;
 $color-border: grey;
 $color-white: #ffffff;
 $color-background: #d2f898;
-$color-background-global: #2f2f2f;
+$color-background-global: #212126;
 
 $color-shadow-red: rgba(255, 0, 0, 0.8);
 $color-shadow-blue: rgba(0, 123, 255, 0.8);
@@ -19,7 +19,7 @@ $color-shadow-yellow: rgb(212, 218, 30);
 $border-radius-small: 0.25rem;
 $border-radius-medium: 0.625rem;
 $border-radius-large: 1.5rem;
-
+$border-radius-xlarge: 3rem;
 // Padding
 $padding-small: 0.3125rem; // 5px
 $padding-medium: 0.625rem; // 10px
@@ -35,6 +35,7 @@ $font-size-medium: 1.875rem; // 30px
 $font-size-large: 2.375rem; // 38px
 $font-size-xlarge: 3.125rem; // 50px
 $font-size-title: 3.75rem; // 60px
+$font-size-xtitle: 6rem; // 70px
 
 // Fonts
 $font-mono: "Courier New", Courier, monospace;
