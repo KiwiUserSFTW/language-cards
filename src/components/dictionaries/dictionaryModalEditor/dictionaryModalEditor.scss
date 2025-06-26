@@ -1,4 +1,4 @@
-.dict-list-item-editor {
+.dict-editor {
     display: flex;
     left: 0;
     top: 0;
@@ -24,6 +24,7 @@
         padding: $pading-xmedium;
         font-size: $font-size-base;
         font-weight: $font-weight-regular;
+        width: 70vw;
 
         &::before {
             content: "";
@@ -48,7 +49,7 @@
 
         }
 
-        &-answer {
+        &-input {
 
             flex: 3;
 
@@ -71,23 +72,59 @@
             }
         }
 
-        &-delete {
-            margin-left: auto;
+        &-form {
+            display: flex;
+            position: relative;
+            align-items: center;
+            justify-content: space-between;
+            width: 70vw;
 
+            input {
+                position: relative;
+                width: 40%;
+                margin-right: 10px;
+                padding: $padding-small $padding-medium;
+                border: 1px solid $color-primary;
+                border-radius: $border-radius-medium;
+                font-size: $font-size-base;
+                font-family: $font-prime;
+                transition: border-color $transition-fast, box-shadow $transition-fast;
+                background-color: $color-white;
+                color: $color-background-global;
+
+            }
+
+            input:focus {
+                border-color: $color-primary-hover;
+                box-shadow: 0 0 0 2px rgba(106, 168, 60, 0.3);
+                outline: none;
+            }
+        }
+
+        &-button {
             button {
                 border: 1px solid $color-border;
                 border-radius: 4px;
                 font-family: $font-alt;
                 font-size: $font-size-base;
                 cursor: pointer;
-                background-color: #de6b74;
+            }
+
+            .delete {
+
+                background-color: $color-danger;
+
+            }
+
+            .add {
+                background-color: $color-success;
             }
         }
     }
 }
 
-.dict-list-item-editor-save button {
-    background-color: #2a9d8f;
+.dict-editor-form-save button {
+    background-color: $color-success;
     color: black;
     padding: $padding-medium $padding-large;
     border: none;

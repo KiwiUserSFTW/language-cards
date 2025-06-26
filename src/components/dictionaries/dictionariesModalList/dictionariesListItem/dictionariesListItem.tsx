@@ -38,7 +38,7 @@ const DictionariesListItem: FC<DictionariesListItemPropsType> = ({
         </div>
       ))}
       <Modal open={modalIsOpen} setOpen={setModalIsOpen}>
-        <DictionaryModalEditor itemKey={itemKey} />
+        <DictionaryModalEditor itemKey={itemKey} setOpen = {setModalIsOpen}/>
       </Modal>
     </>
   );
