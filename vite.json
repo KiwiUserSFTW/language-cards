@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
-  ]
+  "public": "dist",
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
