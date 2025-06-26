@@ -33,7 +33,7 @@
             left: 0;
             height: 1px;
             width: 100%;
-            border-top: 2px dashed $color-border;
+            border-top: 2px dashed $color-accent;
         }
 
         &:first-child::before {
@@ -103,31 +103,35 @@
 
         &-button {
             button {
-                border: 1px solid $color-border;
+                border: 2px solid;
                 border-radius: 4px;
                 font-family: $font-alt;
                 font-size: $font-size-base;
+                background-color: $color-background-global;
                 cursor: pointer;
             }
 
             .delete {
-
-                background-color: $color-danger;
+                color: $color-danger;
+                border: 2px solid $color-danger;
 
             }
 
             .add {
-                background-color: $color-success;
+                color: $color-success;
+                border: 2px solid $color-success;
             }
         }
     }
 }
 
 .dict-editor-form-save button {
-    background-color: $color-success;
+    background-color: $color-background-global;
     color: black;
     padding: $padding-medium $padding-large;
-    border: none;
+    color: $color-success;
+    border: 2px solid $color-success;
+
     border-radius: $border-radius-small;
     font-size: $font-size-base;
     font-weight: $font-weight-regular;

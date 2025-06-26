@@ -64,7 +64,9 @@ const Card: FC<CardPropsType> = ({ value, answer, updateCards }) => {
           onKeyDown={handleEnterPress}
           onChange={(e) => setInput(e.target.value)}
         ></input>
-        <button onClick={handleClick}> → </button>
+        <button onClick={handleClick}>
+          <div className="arrow">→</div>
+        </button>
       </div>
     </div>
   );

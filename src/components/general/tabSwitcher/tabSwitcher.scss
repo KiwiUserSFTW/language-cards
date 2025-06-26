@@ -1,24 +1,31 @@
 .tab-container {
-  .tab {
-    padding: 5px;
-    margin: 10px;
-    border: 1px solid $color-border;
-    border-radius: $border-radius-medium;
-    cursor: pointer;
-    font-size: $font-size-medium;
-    font-family: $font-prime;
-
-    &-button {
-      color: $color-accent-light;
-    }
-  }
-
   position: absolute;
   top: 10px;
   right: 10px;
   color: white;
   box-shadow: 0 2px 2px -2px $color-border;
   border-radius: $border-radius-large;
+  
+  .tab {
+    position: relative;
+    padding: 1vh;
+    margin: 2vh;
+    border: 2px solid $color-success;
+    border-radius: $border-radius-xlarge;
+    cursor: pointer;
+    font-size: $font-size-medium;
+    font-family: $font-prime;
+    text-align: center;
+    
+    &-button {
+      font-family: $font-mono;
+      font-weight: $font-weight-regular;
+      font-size: $font-size-base;
+      color: $color-white;
+      border-color: $color-accent;
+    }
+  }
+
   .active {
     color: $color-primary;
   }
@@ -30,6 +37,7 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+
     .tab {
       font-size: $font-size-xbase;
     }
