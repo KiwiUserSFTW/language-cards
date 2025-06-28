@@ -11,16 +11,21 @@ import {
   updateLocalStorageData,
   addVocabulary,
 } from "@data/vocabulary";
+
+// components
 import DictionariesListUploadButton from "./dictionariesListUploadButton/dictionariesListUploadButton";
 import DictionariesListItem from "./dictionariesListItem/dictionariesListItem";
+import DictionariesListAddField from "./dictionariesListAddField/DictionariesListAddField";
 
 const DictionariesModalList: FC = () => {
   const [dictlist, setDictList] = useState<string[]>([]);
+  const [trigger, setTrigger] = useState(false);
 
   useEffect(() => {
     const vocab = getVocabularys();
     setDictList(Object.keys(vocab));
-  }, []);
+    updateLocalStorageData();
+  }, [trigger]);
 
   // TODO CONFIRM MODAL WINDOW
   const handleDelete = (key: string) => {
@@ -56,6 +61,7 @@ const DictionariesModalList: FC = () => {
   return (
     <div className="dict-list">
       <DictionariesListItem dictlist={dictlist} handleDelete={handleDelete} />
+      <DictionariesListAddField setTrigger={setTrigger} />
       <DictionariesListUploadButton handleUpload={handleUpload} />
     </div>
   );
