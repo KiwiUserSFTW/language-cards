@@ -19,7 +19,6 @@ const DictionariesListItem: FC<DictionariesListItemPropsType> = ({
 }) => {
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
   const [itemKey, setItemKey] = useState("init-vocabulary");
-  console.log(itemKey);
   const handleEdit = (itemKey: string) => {
     setItemKey(itemKey);
 

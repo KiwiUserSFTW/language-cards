@@ -140,7 +140,6 @@
     transition: background-color $transition-fast, box-shadow $transition-fast;
 
     &:hover {
-        background-color: darken($color-success, 10%);
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
 

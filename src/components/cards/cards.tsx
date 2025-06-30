@@ -52,7 +52,7 @@ const Cards: FC = () => {
   const [dictionary, setDictionary] = useState(selectedId);
 
   useEffect(() => {
-    if (dictionary) {
+    if (dictionary !== " ") {
       const vocab = getVocabulary(dictionary);
       setCardsList(vocab);
     }

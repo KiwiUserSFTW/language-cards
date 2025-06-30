@@ -50,7 +50,6 @@ const DictionaryModalEditor: FC<DictionaryModalEditorProps> = ({
     });
     handleChange(addFormValues.name, addFormValues.answer);
   };
-  console.log(dict);
   const handleChange = (name: string, newValue: string) => {
     setDict((prev) => ({ ...prev, [name]: newValue }));
   };

@@ -81,7 +81,6 @@ export const replaceVocabulary = (
     return;
   }
   vocabulary[key] = { ...newVocabulary };
-  console.log(vocabulary);
 };
 // get vocabulary
 export const getVocabulary = (key: string) => {
