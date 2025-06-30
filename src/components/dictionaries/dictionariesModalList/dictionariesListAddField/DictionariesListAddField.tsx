@@ -1,11 +1,18 @@
 // react
-import { FC, useState, KeyboardEvent } from "react";
+import { FC, useState } from "react";
 
 // style
 import "./dictionariesListAddField.scss";
 
 // functions
 import { addVocabulary } from "@data/vocabulary";
+import Input from "@components/general/input/input";
+
+// types
+import Button, {
+  buttonSize,
+  buttonType,
+} from "@components/general/button/button";
 
 type DictionariesListAddFieldProps = {
   setTrigger: React.Dispatch<React.SetStateAction<boolean>>;
@@ -22,24 +29,20 @@ const DictionariesListAddField: FC<DictionariesListAddFieldProps> = ({
     addVocabulary(value, { init: "init" });
   };
 
-  const handleEnterPress = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      handleClick();
-    }
-  };
   return (
     <div className="dict-list-item">
-      <input
+      <Input
         value={value}
-        type="text"
-        className="dict-list-item-add-field-input"
-        onKeyDown={handleEnterPress}
-        onChange={(e) => setValue(e.target.value)}
+        setValue={setValue}
+        placeholder="type name here"
+        handleAccept={handleClick}
       />
-      <button className="dict-list-item-add-field-button" onClick={handleClick}>
-        add
-      </button>
+      <Button
+        size={buttonSize.BASE}
+        type={buttonType.SUCCESS}
+        value="add"
+        handleClick={handleClick}
+      />
     </div>
   );
 };

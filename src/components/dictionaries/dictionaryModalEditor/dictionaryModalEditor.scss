@@ -13,8 +13,6 @@
     width: auto;
     font-family: $font-alt;
 
-
-
     &-element {
         display: flex;
         position: relative;
@@ -40,36 +38,14 @@
             content: none;
         }
 
-
         &-name {
             flex: 1;
             color: $color-primary;
             font-weight: $font-weight-regular;
-
-
         }
 
         &-input {
-
             flex: 3;
-
-            input {
-                width: 80%;
-                padding: $padding-small $padding-medium;
-                border: 1px solid $color-primary;
-                border-radius: $border-radius-medium;
-                font-size: $font-size-base;
-                font-family: $font-prime;
-                transition: border-color $transition-fast, box-shadow $transition-fast;
-                background-color: $color-white;
-                color: $color-background-global;
-
-                &:focus {
-                    border-color: $color-primary-hover;
-                    box-shadow: 0 0 0 2px rgba(106, 168, 60, 0.3);
-                    outline: none;
-                }
-            }
         }
 
         &-form {
@@ -78,50 +54,15 @@
             align-items: center;
             justify-content: space-between;
             width: 70vw;
-
-            input {
-                position: relative;
-                width: 40%;
-                margin-right: 10px;
-                padding: $padding-small $padding-medium;
-                border: 1px solid $color-primary;
-                border-radius: $border-radius-medium;
-                font-size: $font-size-base;
-                font-family: $font-prime;
-                transition: border-color $transition-fast, box-shadow $transition-fast;
-                background-color: $color-white;
-                color: $color-background-global;
-
-            }
-
-            input:focus {
-                border-color: $color-primary-hover;
-                box-shadow: 0 0 0 2px rgba(106, 168, 60, 0.3);
-                outline: none;
-            }
+            gap: 2vw;
         }
 
-        &-button {
-            button {
-                border: 2px solid;
-                border-radius: 4px;
-                font-family: $font-alt;
-                font-size: $font-size-base;
-                background-color: $color-background-global;
-                cursor: pointer;
-            }
+    }
 
-            .delete {
-                color: $color-danger;
-                border: 2px solid $color-danger;
+    input {
+        font-size: $font-size-base;
+        font-family: $font-mono;
 
-            }
-
-            .add {
-                color: $color-success;
-                border: 2px solid $color-success;
-            }
-        }
     }
 }
 

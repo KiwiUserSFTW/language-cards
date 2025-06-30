@@ -1,22 +1,5 @@
 .dict-list-item {
     &-add-field {
-        &-input {
-            width: 80%;
-            padding: $padding-small $padding-medium;
-            border: 1px solid $color-primary;
-            border-radius: $border-radius-medium;
-            font-size: $font-size-base;
-            font-family: $font-prime;
-            transition: border-color $transition-fast, box-shadow $transition-fast;
-            background-color: $color-background-global;
-            color: $color-white;
-
-            &:focus {
-                box-shadow: 0 0 0 1px $color-success;
-                outline: none;
-            }
-        }
-
         &-button {
             position: relative;
             left: auto;
