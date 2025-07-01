@@ -13,8 +13,6 @@
     width: auto;
     font-family: $font-alt;
 
-
-
     &-element {
         display: flex;
         position: relative;
@@ -24,7 +22,6 @@
         padding: $pading-xmedium;
         font-size: $font-size-base;
         font-weight: $font-weight-regular;
-        width: 70vw;
 
         &::before {
             content: "";
@@ -40,36 +37,14 @@
             content: none;
         }
 
-
         &-name {
             flex: 1;
             color: $color-primary;
             font-weight: $font-weight-regular;
-
-
         }
 
         &-input {
-
             flex: 3;
-
-            input {
-                width: 80%;
-                padding: $padding-small $padding-medium;
-                border: 1px solid $color-primary;
-                border-radius: $border-radius-medium;
-                font-size: $font-size-base;
-                font-family: $font-prime;
-                transition: border-color $transition-fast, box-shadow $transition-fast;
-                background-color: $color-white;
-                color: $color-background-global;
-
-                &:focus {
-                    border-color: $color-primary-hover;
-                    box-shadow: 0 0 0 2px rgba(106, 168, 60, 0.3);
-                    outline: none;
-                }
-            }
         }
 
         &-form {
@@ -77,51 +52,13 @@
             position: relative;
             align-items: center;
             justify-content: space-between;
-            width: 70vw;
-
-            input {
-                position: relative;
-                width: 40%;
-                margin-right: 10px;
-                padding: $padding-small $padding-medium;
-                border: 1px solid $color-primary;
-                border-radius: $border-radius-medium;
-                font-size: $font-size-base;
-                font-family: $font-prime;
-                transition: border-color $transition-fast, box-shadow $transition-fast;
-                background-color: $color-white;
-                color: $color-background-global;
-
-            }
-
-            input:focus {
-                border-color: $color-primary-hover;
-                box-shadow: 0 0 0 2px rgba(106, 168, 60, 0.3);
-                outline: none;
-            }
+            gap: 2vw;
         }
 
-        &-button {
-            button {
-                border: 2px solid;
-                border-radius: 4px;
-                font-family: $font-alt;
-                font-size: $font-size-base;
-                background-color: $color-background-global;
-                cursor: pointer;
-            }
+    }
 
-            .delete {
-                color: $color-danger;
-                border: 2px solid $color-danger;
-
-            }
-
-            .add {
-                color: $color-success;
-                border: 2px solid $color-success;
-            }
-        }
+    input {
+        font-family: $font-mono;
     }
 }
 
@@ -140,7 +77,6 @@
     transition: background-color $transition-fast, box-shadow $transition-fast;
 
     &:hover {
-        background-color: darken($color-success, 10%);
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
 
@@ -151,5 +87,26 @@
     &:focus {
         outline: none;
         box-shadow: 0 0 0 2px rgba($color-success, 0.3);
+    }
+}
+
+@media (max-width:768px) {
+    .dict-editor-element {
+        font-size: $font-size-xsmall;
+        padding: $padding-small;
+        width: 100%;
+        &-name {
+            flex:1;
+            position: relative;
+            width: 10vw;
+        }
+        &-input {
+            flex:1;
+            width: 10vw;
+        }
+    }
+
+    .dict-editor-form-save button {
+        font-size: $font-size-xsmall;
     }
 }

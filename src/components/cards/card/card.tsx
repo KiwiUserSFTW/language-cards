@@ -65,7 +65,12 @@ const Card: FC<CardPropsType> = ({ value, answer, updateCards }) => {
           onChange={(e) => setInput(e.target.value)}
         ></input>
         <button onClick={handleClick}>
-          <div className="arrow">→</div>
+          <div className="arrow">
+            <img
+              src="https://img.icons8.com/pulsar-line/480/FFFFFF/arrow.png"
+              alt="arrow"
+            />
+          </div>
         </button>
       </div>
     </div>

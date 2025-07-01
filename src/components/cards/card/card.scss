@@ -45,7 +45,7 @@
 
     button {
       display: flex;
-      align-items: flex-end;
+      align-items: center;
       justify-content: center;
       background-color: $color-primary;
       color: #ffffff;
@@ -59,8 +59,11 @@
       margin-top: 1vh;
 
       .arrow {
-        position: relative;
-        bottom: 3px;
+        img {
+          display: block;
+          width: 100px;
+          height: 100px;
+        }
       }
 
       &:hover {
@@ -89,16 +92,16 @@
 @media (max-width: 768px) {
   .card {
     padding: $padding-medium;
-
     &-title {
-      font-size: $font-size-xlarge;
+      font-size: $font-size-title;
     }
 
     &-answer-input {
       flex-direction: column;
       gap: 10px;
-
       input {
+        height: 12vw;
+        width: 90%;
         font-size: $font-size-medium;
         padding: $padding-small;
       }
@@ -107,10 +110,13 @@
     button {
       padding: $padding-small;
       font-size: $font-size-large;
-      height: 40px;
+      height: 12vw;
 
       .arrow {
-        top: 4px;
+        img {
+          width: 80px;
+          height: 80px;
+        }
       }
     }
   }

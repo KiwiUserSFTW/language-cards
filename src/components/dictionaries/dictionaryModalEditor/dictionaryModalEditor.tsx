@@ -10,6 +10,11 @@ import {
   replaceVocabulary,
   updateLocalStorageData,
 } from "@data/vocabulary";
+import Input from "@components/general/input/input";
+import Button, {
+  buttonSize,
+  buttonType,
+} from "@components/general/button/button";
 
 type DictionaryModalEditorProps = {
   itemKey: string;
@@ -37,7 +42,7 @@ const DictionaryModalEditor: FC<DictionaryModalEditorProps> = ({
     setAddFormValues((prev) => ({ ...prev, [key]: value }));
   };
 
-  const handeAddFormApply = () => {
+  const handleAddFormApply = () => {
     if (addFormValues.name === "" || addFormValues.answer === "") {
       console.error(
         `one of the entries is empty, addFormValues.name=${addFormValues.name}, value=${addFormValues.answer} `
@@ -50,9 +55,14 @@ const DictionaryModalEditor: FC<DictionaryModalEditorProps> = ({
     });
     handleChange(addFormValues.name, addFormValues.answer);
   };
-  console.log(dict);
   const handleChange = (name: string, newValue: string) => {
     setDict((prev) => ({ ...prev, [name]: newValue }));
+  };
+
+  const handleDelete = (deletedElem: string) => {
+    // eslint-disable-next-line no-use-before-define
+    const { [deletedElem]: _deletedElem, ...newState } = dict;
+    setDict(newState);
   };
 
   const handleClick = () => {
@@ -73,39 +83,43 @@ const DictionaryModalEditor: FC<DictionaryModalEditorProps> = ({
           <div className="dict-editor-element" key={name}>
             <div className="dict-editor-element-name">{name}</div>
             <div className="dict-editor-element-input">
-              <input
-                type="text"
+              <Input
                 value={dict[name] ?? ""}
-                onChange={(e) => handleChange(name, e.target.value)}
+                setValue={(value) => handleChange(name, value)}
               />
             </div>
             <div className="dict-editor-element-button">
-              <button className="delete">delete</button>
+              <Button
+                type={buttonType.DANGER}
+                size={buttonSize.BASE}
+                value="delete"
+                handleClick={() => handleDelete(name)}
+              />
             </div>
           </div>
         );
       })}
       <div className="dict-editor-element">
         <div className="dict-editor-element-form">
-          <input
-            name="name"
-            aria-label="name"
-            type="text"
+          <Input
+            setValue={(value) => handleAddFormChange("name", value)}
             value={addFormValues.name}
+            handleAccept={handleAddFormApply}
             placeholder="type name"
-            onChange={(e) => handleAddFormChange("name", e.target.value)}
           />
-          <input
-            name="type"
-            type="text"
+          <Input
+            setValue={(value) => handleAddFormChange("answer", value)}
             value={addFormValues.answer}
+            handleAccept={handleAddFormApply}
             placeholder="type answer"
-            onChange={(e) => handleAddFormChange("answer", e.target.value)}
           />
           <div className="dict-editor-element-button">
-            <button className="add" onClick={handeAddFormApply}>
-              add
-            </button>
+            <Button
+              size={buttonSize.BASE}
+              type={buttonType.SUCCESS}
+              value="add"
+              handleClick={handleAddFormApply}
+            />
           </div>
         </div>
       </div>

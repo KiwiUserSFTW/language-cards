@@ -8,6 +8,12 @@ import { FC, useState } from "react";
 import DictionaryModalEditor from "@components/dictionaries/dictionaryModalEditor/dictionaryModalEditor";
 import Modal from "@components/general/modal/modal";
 
+// types
+import Button, {
+  buttonSize,
+  buttonType,
+} from "@components/general/button/button";
+
 type DictionariesListItemPropsType = {
   dictlist: string[];
   handleDelete: (item: string) => void;
@@ -19,7 +25,6 @@ const DictionariesListItem: FC<DictionariesListItemPropsType> = ({
 }) => {
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
   const [itemKey, setItemKey] = useState("init-vocabulary");
-  console.log(itemKey);
   const handleEdit = (itemKey: string) => {
     setItemKey(itemKey);
 
@@ -32,13 +37,23 @@ const DictionariesListItem: FC<DictionariesListItemPropsType> = ({
         <div className="dict-list-item" key={item}>
           <div className="dict-list-item-title">{item}</div>
           <div className="buttons">
-            <button onClick={() => handleDelete(item)}> delete </button>
-            <button onClick={() => handleEdit(item)}> edit </button>
+            <Button
+              size={buttonSize.MEDIUM}
+              type={buttonType.DANGER}
+              value="delete"
+              handleClick={() => handleDelete(item)}
+            />
+            <Button
+              size={buttonSize.MEDIUM}
+              type={buttonType.SUCCESS}
+              value="edit"
+              handleClick={() => handleEdit(item)}
+            />
           </div>
         </div>
       ))}
       <Modal open={modalIsOpen} setOpen={setModalIsOpen}>
-        <DictionaryModalEditor itemKey={itemKey} setOpen = {setModalIsOpen}/>
+        <DictionaryModalEditor itemKey={itemKey} setOpen={setModalIsOpen} />
       </Modal>
     </>
   );

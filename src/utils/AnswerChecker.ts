@@ -57,7 +57,6 @@ export class AnswerChecker {
   }
 
   private normalize(text: string): string {
-    console.log("NORMILIZE -", text);
     return text
       .toLowerCase()
       .normalize("NFD")

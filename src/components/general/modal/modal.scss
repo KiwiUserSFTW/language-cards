@@ -35,7 +35,12 @@
 }
 
 @media (max-width: 768px) {
+
+  .modal-container {
+    width: 100%;
+  }
+
   .modal-content {
-    padding: $padding-medium;
+    padding: 0;
   }
 }
