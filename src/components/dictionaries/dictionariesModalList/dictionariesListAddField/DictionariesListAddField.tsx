@@ -38,7 +38,7 @@ const DictionariesListAddField: FC<DictionariesListAddFieldProps> = ({
         handleAccept={handleClick}
       />
       <Button
-        size={buttonSize.BASE}
+        size={buttonSize.MEDIUM}
         type={buttonType.SUCCESS}
         value="add"
         handleClick={handleClick}

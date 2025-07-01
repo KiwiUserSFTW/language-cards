@@ -14,3 +14,9 @@
         outline: none;
     }
 }
+
+@media(max-width:768px) {
+    .input {
+        font-size: $font-size-xsmall;   
+    }
+}
