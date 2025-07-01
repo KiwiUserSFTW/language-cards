@@ -8,10 +8,9 @@
   color: white;
 
   &-title {
-    overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 100%;
     white-space: nowrap;
+    overflow: hidden;
   }
 
   &::before {
@@ -32,12 +31,13 @@
   .buttons {
     display: flex;
     gap: 10px;
+    margin-left: 2vh;
   }
 }
 
 @media (max-width: 768px) {
   .dict-list-item {
-    font-size: $font-size-base;
+    font-size: $font-size-xsmall;
     padding: $padding-small;
 
     &::before {

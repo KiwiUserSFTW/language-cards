@@ -14,8 +14,7 @@ const DictionariesListUploadButton: FC<
   DictionariesListUploadButtonPropsType
 > = ({ handleUpload }) => {
   const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
-    // event.preventDefault();
-
+    event.preventDefault();
     handleUpload(event);
   };
 

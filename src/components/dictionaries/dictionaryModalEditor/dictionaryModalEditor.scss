@@ -22,7 +22,6 @@
         padding: $pading-xmedium;
         font-size: $font-size-base;
         font-weight: $font-weight-regular;
-        width: 70vw;
 
         &::before {
             content: "";
@@ -53,16 +52,13 @@
             position: relative;
             align-items: center;
             justify-content: space-between;
-            width: 70vw;
             gap: 2vw;
         }
 
     }
 
     input {
-        font-size: $font-size-base;
         font-family: $font-mono;
-
     }
 }
 
@@ -91,5 +87,26 @@
     &:focus {
         outline: none;
         box-shadow: 0 0 0 2px rgba($color-success, 0.3);
+    }
+}
+
+@media (max-width:768px) {
+    .dict-editor-element {
+        font-size: $font-size-xsmall;
+        padding: $padding-small;
+        width: 100%;
+        &-name {
+            flex:1;
+            position: relative;
+            width: 10vw;
+        }
+        &-input {
+            flex:1;
+            width: 10vw;
+        }
+    }
+
+    .dict-editor-form-save button {
+        font-size: $font-size-xsmall;
     }
 }

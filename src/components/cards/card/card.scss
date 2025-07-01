@@ -61,8 +61,8 @@
       .arrow {
         img {
           display: block;
-          width: 120px;
-          height: 120px;
+          width: 100px;
+          height: 100px;
         }
       }
 
@@ -92,16 +92,16 @@
 @media (max-width: 768px) {
   .card {
     padding: $padding-medium;
-
     &-title {
-      font-size: $font-size-xlarge;
+      font-size: $font-size-title;
     }
 
     &-answer-input {
       flex-direction: column;
       gap: 10px;
-
       input {
+        height: 12vw;
+        width: 90%;
         font-size: $font-size-medium;
         padding: $padding-small;
       }
@@ -110,12 +110,12 @@
     button {
       padding: $padding-small;
       font-size: $font-size-large;
-      height: 40px;
+      height: 12vw;
 
       .arrow {
         img {
-          width: 90px;
-          height: 90px;
+          width: 80px;
+          height: 80px;
         }
       }
     }

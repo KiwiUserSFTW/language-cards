@@ -3,7 +3,7 @@
   top: 10px;
   right: 10px;
   color: white;
-  box-shadow: 0 2px 2px -2px $color-border;
+  box-shadow: 0 3px 3px -3px $color-success;
   border-radius: $border-radius-large;
   
   .tab {
@@ -16,7 +16,10 @@
     font-size: $font-size-medium;
     font-family: $font-prime;
     text-align: center;
-    
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
     &-button {
       font-family: $font-mono;
       font-weight: $font-weight-regular;
