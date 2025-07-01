@@ -6,6 +6,7 @@
   padding: $padding-medium;
   position: relative;
   color: white;
+
   &-title {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -31,25 +32,6 @@
   .buttons {
     display: flex;
     gap: 10px;
-
-    button {
-      background-color: $color-background-global;
-      border: 1px solid $color-border;
-      border-radius: 4px;
-      font-family: $font-alt;
-      font-size: $font-size-medium;
-      cursor: pointer;
-    }
-
-    button:first-child {
-      color: $color-danger;
-      border: 2px solid $color-danger;
-    }
-
-    button:last-child {
-      color: $color-success;
-      border: 2px solid $color-success;
-    }
   }
 }
 

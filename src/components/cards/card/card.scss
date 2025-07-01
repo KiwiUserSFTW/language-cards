@@ -45,7 +45,7 @@
 
     button {
       display: flex;
-      align-items: flex-end;
+      align-items: center;
       justify-content: center;
       background-color: $color-primary;
       color: #ffffff;
@@ -59,8 +59,11 @@
       margin-top: 1vh;
 
       .arrow {
-        position: relative;
-        bottom: 3px;
+        img {
+          display: block;
+          width: 120px;
+          height: 120px;
+        }
       }
 
       &:hover {
@@ -110,7 +113,10 @@
       height: 40px;
 
       .arrow {
-        top: 4px;
+        img {
+          width: 90px;
+          height: 90px;
+        }
       }
     }
   }

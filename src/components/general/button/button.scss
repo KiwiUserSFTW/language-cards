@@ -1,0 +1,31 @@
+.button {
+    background-color: $color-background-global;
+    border: 1px solid $color-border;
+    border-radius: 4px;
+    font-family: $font-alt;
+    cursor: pointer;
+}
+
+.danger {
+    color: $color-danger;
+    border: 2px solid $color-danger;
+}
+
+.success {
+    color: $color-success;
+    border: 2px solid $color-success;
+}
+
+.base {
+    font-size: $font-size-base;
+}
+
+.medium {
+    font-size: $font-size-medium;
+}
+
+@media (max-width: 768px) {
+    .base {
+        font-size: $font-size-xsmall;
+    }
+}
