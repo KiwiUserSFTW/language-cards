@@ -11,7 +11,12 @@ const getRandomCard = (cardsList: Record<string, string>) => {
   return entries[Math.floor(Math.random() * entries.length)];
 };
 
+// functions
 import { getVocabulary } from "@data/vocabulary";
+
+const createCardsList = (dictId: string) => {
+  return getVocabulary(dictId);
+};
 
 // components
 import Card from "./card/card";
@@ -24,6 +29,7 @@ const Cards: FC = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const selectedId = queryParams.get("id") || " ";
+  const [dictionary, setDictionary] = useState(selectedId);
 
   const [cardsList, setCardsList] = useState<cardsDataType>({
     apple: "яблуко",
@@ -38,6 +44,11 @@ const Cards: FC = () => {
   });
 
   const updateCards = (value: string) => {
+    if (Object.keys(cardsList).length <= 1) {
+      console.log("one");
+      setCardsList(createCardsList(dictionary));
+      return;
+    }
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { [value]: deletedValue, ...newList } = cardsList;
     setCardsList(newList);
@@ -49,12 +60,9 @@ const Cards: FC = () => {
     setCurrentCard({ value, answer });
   }, [cardsList]);
 
-  const [dictionary, setDictionary] = useState(selectedId);
-
   useEffect(() => {
     if (dictionary !== " ") {
-      const vocab = getVocabulary(dictionary);
-      setCardsList(vocab);
+      setCardsList(createCardsList(dictionary));
     }
   }, [dictionary]);
 

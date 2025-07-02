@@ -60,6 +60,10 @@ const DictionaryModalEditor: FC<DictionaryModalEditorProps> = ({
   };
 
   const handleDelete = (deletedElem: string) => {
+    if (Object.keys(dict).length <= 1) {
+      console.error("only one value exist, deleting not possible");
+      return;
+    }
     // eslint-disable-next-line no-use-before-define
     const { [deletedElem]: _deletedElem, ...newState } = dict;
     setDict(newState);
