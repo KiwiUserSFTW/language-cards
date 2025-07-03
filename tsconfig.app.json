@@ -13,7 +13,7 @@
       "@styles/*": ["src/styles/*"],
       "@data/*": ["src/data/*"]
     },
-    
+
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,

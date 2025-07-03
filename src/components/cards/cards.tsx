@@ -45,7 +45,6 @@ const Cards: FC = () => {
 
   const updateCards = (value: string) => {
     if (Object.keys(cardsList).length <= 1) {
-      console.log("one");
       setCardsList(createCardsList(dictionary));
       return;
     }
