@@ -1,8 +1,13 @@
 .dict-nav-list {
   .tab-container {
-    max-height: 30vh;
     overflow-y: scroll;
     max-width: 60vh;
     scrollbar-width: thin;
+  }
+}
+
+@media (max-width: 768px) {
+  .tab-container {
+    max-height: 60vw;
   }
 }
