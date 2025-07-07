@@ -13,7 +13,7 @@ import { useTranslation } from "react-i18next";
 enum languages {
   UK = "uk",
   EN = "en",
-  AR = "ar",
+  // AR = "ar",
   IT = "it",
   DE = "de",
 }
@@ -21,7 +21,7 @@ enum languages {
 const languageNamesMap: Record<languages, string> = {
   [languages.UK]: "uk",
   [languages.EN]: "en",
-  [languages.AR]: "ar",
+  // [languages.AR]: "ar",
   [languages.IT]: "it",
   [languages.DE]: "de",
 };
