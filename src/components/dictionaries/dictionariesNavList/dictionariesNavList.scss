@@ -1,13 +1,21 @@
 .dict-nav-list {
   .tab-container {
     overflow-y: scroll;
-    max-width: 60vh;
+    max-width: 60vw;
+    max-height: 30vh;
     scrollbar-width: thin;
   }
 }
 
 @media (max-width: 768px) {
-  .tab-container {
-    max-height: 60vw;
+  .dict-nav-list {
+    .tab-container {
+      width: 100%;
+      max-width: 100%;
+      max-height: 30vh;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 }

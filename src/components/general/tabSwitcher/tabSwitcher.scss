@@ -5,7 +5,7 @@
   color: white;
   box-shadow: 0 3px 3px -3px $color-success;
   border-radius: $border-radius-large;
-  
+
   .tab {
     position: relative;
     padding: 1vh;
@@ -35,13 +35,7 @@
 }
 
 @media (max-width: 768px) {
-  .tab-container {
-    width: 100%;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    .tab {
-      font-size: $font-size-xbase;
-    }
+  .tab {
+    font-size: $font-size-xbase;
   }
 }
