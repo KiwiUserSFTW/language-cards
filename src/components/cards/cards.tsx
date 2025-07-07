@@ -1,6 +1,5 @@
 // react
 import { FC, useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 
 // styles
 import "./cards.scss";
@@ -21,14 +20,17 @@ const createCardsList = (dictId: string) => {
 // components
 import Card from "./card/card";
 import DictionariesNavList from "@components/dictionaries/dictionariesNavList/dictionariesNavList";
+import LanguageSwithcer from "@components/general/languageSwitcher/languageSwitcher";
+
+// custom hooks
+import useQuery from "@cutomHooks/useQuery";
 
 // types
 import { cardsDataType } from "@data/vocabulary";
 
 const Cards: FC = () => {
-  const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
-  const selectedId = queryParams.get("id") || " ";
+  const query = useQuery();
+  const selectedId = query.get("id") || " ";
   const [dictionary, setDictionary] = useState(selectedId);
 
   const [cardsList, setCardsList] = useState<cardsDataType>({
@@ -76,6 +78,7 @@ const Cards: FC = () => {
         answer={currentCard.answer}
         updateCards={(value) => updateCards(value)}
       />
+      <LanguageSwithcer />
     </div>
   );
 };
