@@ -4,9 +4,14 @@ import { FC, useState } from "react";
 // style
 import "./dictionariesListAddField.scss";
 
+// components
+import Input from "@components/general/input/input";
+
 // functions
 import { addVocabulary } from "@data/vocabulary";
-import Input from "@components/general/input/input";
+
+// translation
+import { useTranslation } from "react-i18next";
 
 // types
 import Button, {
@@ -22,6 +27,8 @@ const DictionariesListAddField: FC<DictionariesListAddFieldProps> = ({
   setTrigger,
 }) => {
   const [value, setValue] = useState<string>("");
+  const { t } = useTranslation();
+
   const handleClick = () => {
     if (value === "" || value === undefined) return;
     setTrigger((prev) => !prev);
@@ -34,13 +41,13 @@ const DictionariesListAddField: FC<DictionariesListAddFieldProps> = ({
       <Input
         value={value}
         setValue={setValue}
-        placeholder="type name here"
+        placeholder={t('general.input.placeholder.name')}
         handleAccept={handleClick}
       />
       <Button
         size={buttonSize.MEDIUM}
         type={buttonType.SUCCESS}
-        value="add"
+        value={t("general.button.add")}
         handleClick={handleClick}
       />
     </div>

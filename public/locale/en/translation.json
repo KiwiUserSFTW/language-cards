@@ -1,0 +1,29 @@
+{
+  "general": {
+    "button": {
+      "add": "Add",
+      "edit": "Edit",
+      "delete": "Delete"
+    },
+    "input": {
+      "placeholder": {
+        "name": "Type name here",
+        "answer": "Type answer here"
+      }
+    }
+  },
+  "cards": {
+    "navList": {
+      "addEditField": "Add or edit dictionary"
+    },
+    "modalList": {
+      "addButton": {
+        "label": "Upload new dictionary (JSON)",
+        "title": "Choose from files or drop file here"
+      }
+    },
+    "modalEditor": {
+      "saveButton": "Save changes"
+    }
+  }
+}

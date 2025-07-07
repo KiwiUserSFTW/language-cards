@@ -8,6 +8,9 @@ import { FC, useState } from "react";
 import DictionaryModalEditor from "@components/dictionaries/dictionaryModalEditor/dictionaryModalEditor";
 import Modal from "@components/general/modal/modal";
 
+// translation
+import { useTranslation } from "react-i18next";
+
 // types
 import Button, {
   buttonSize,
@@ -25,6 +28,8 @@ const DictionariesListItem: FC<DictionariesListItemPropsType> = ({
 }) => {
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
   const [itemKey, setItemKey] = useState("init-vocabulary");
+  const { t } = useTranslation();
+
   const handleEdit = (itemKey: string) => {
     setItemKey(itemKey);
 
@@ -40,13 +45,13 @@ const DictionariesListItem: FC<DictionariesListItemPropsType> = ({
             <Button
               size={buttonSize.MEDIUM}
               type={buttonType.DANGER}
-              value="delete"
+              value={t("general.button.delete")}
               handleClick={() => handleDelete(item)}
             />
             <Button
               size={buttonSize.MEDIUM}
               type={buttonType.SUCCESS}
-              value="edit"
+              value={t("general.button.edit")}
               handleClick={() => handleEdit(item)}
             />
           </div>

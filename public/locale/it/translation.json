@@ -1,0 +1,29 @@
+{
+  "general": {
+    "button": {
+      "add": "Aggiungi",
+      "edit": "Modifica",
+      "delete": "Elimina"
+    },
+    "input": {
+      "placeholder": {
+        "name": "Inserisci il nome qui",
+        "answer": "Inserisci la risposta qui"
+      }
+    }
+  },
+  "cards": {
+    "navList": {
+      "addEditField": "Aggiungi o modifica il dizionario"
+    },
+    "modalList": {
+      "addButton": {
+        "label": "Carica un nuovo dizionario (JSON)",
+        "title": "Seleziona un file o trascinalo qui"
+      }
+    },
+    "modalEditor": {
+      "saveButton": "Salva le modifiche"
+    }
+  }
+}
