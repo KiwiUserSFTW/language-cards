@@ -1,0 +1,29 @@
+{
+  "general": {
+    "button": {
+      "add": "إضافة",
+      "edit": "تعديل",
+      "delete": "حذف"
+    },
+    "input": {
+      "placeholder": {
+        "name": "أدخل الاسم هنا",
+        "answer": "أدخل الإجابة هنا"
+      }
+    }
+  },
+  "cards": {
+    "navList": {
+      "addEditField": "إضافة أو تعديل القاموس"
+    },
+    "modalList": {
+      "addButton": {
+        "label": "تحميل قاموس جديد (JSON)",
+        "title": "اختر ملفًا أو اسحبه إلى هنا"
+      }
+    },
+    "modalEditor": {
+      "saveButton": "حفظ التغييرات"
+    }
+  }
+}

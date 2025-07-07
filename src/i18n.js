@@ -8,13 +8,16 @@ i18n
   .use(I18nextBrowserLanguageDetector)
   .use(initReactI18next)
   .init({
-    lng: "en",
     fallbackLng: "en",
     backend: {
       loadPath: "/locale/{{lng}}/translation.json",
     },
     interpolation: {
       escapeValue: false,
+    },
+    detection: {
+      order: ["localStorage", "navigator"],
+      caches: ["localStorage"],
     },
   });
 
