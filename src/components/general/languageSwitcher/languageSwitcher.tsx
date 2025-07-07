@@ -30,7 +30,7 @@ const languageNamesMap: Record<languages, string> = {
 type languageKey = keyof typeof languages;
 
 const LanguageSwithcer: FC = () => {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
   const [activeTab, setActiveTab] = useState<languages>(
     // langParam || languages.EN
