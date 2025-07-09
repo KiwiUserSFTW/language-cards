@@ -92,6 +92,7 @@
 @media (max-width: 768px) {
   .card {
     padding: $padding-medium;
+
     &-title {
       font-size: $font-size-title;
     }
@@ -99,6 +100,7 @@
     &-answer-input {
       flex-direction: column;
       gap: 10px;
+
       input {
         height: 12vw;
         width: 90%;
