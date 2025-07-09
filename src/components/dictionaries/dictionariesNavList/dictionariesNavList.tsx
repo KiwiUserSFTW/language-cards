@@ -13,6 +13,9 @@ import Modal from "../../general/modal/modal";
 // components
 import DictionariesModalList from "../dictionariesModalList/dictionariesModalList";
 
+// translation
+import { useTranslation } from "react-i18next";
+
 type DictionariesNavListType = {
   activeDictionary: string;
   setActiveDictionary: (name: string) => void;
@@ -24,6 +27,7 @@ const DictionariesNavList: FC<DictionariesNavListType> = ({
 }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   const dictionariesTabs = Object.keys(getVocabularys()).map((vocabulary) => {
@@ -37,11 +41,10 @@ const DictionariesNavList: FC<DictionariesNavListType> = ({
   });
 
   const extraDictionaryTabButton = {
-    name: "add or edit dictionarys",
+    name: t("cards.navList.addEditField"),
     onClick: () => setModalIsOpen(!modalIsOpen),
     button: true,
   };
-
   // add button
   dictionariesTabs.push(extraDictionaryTabButton);
 

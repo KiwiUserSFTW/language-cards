@@ -1,0 +1,29 @@
+{
+  "general": {
+    "button": {
+      "add": "Додати",
+      "edit": "Редагувати",
+      "delete": "Видалити"
+    },
+    "input": {
+      "placeholder": {
+        "name": "Введіть назву тут",
+        "answer": "Введіть відповідь тут"
+      }
+    }
+  },
+  "cards": {
+    "navList": {
+      "addEditField": "Додати або змінити словник"
+    },
+    "modalList": {
+      "addButton": {
+        "label": "Завантажити новий словник (JSON)",
+        "title": "Оберіть файл або перетягніть сюди"
+      }
+    },
+    "modalEditor": {
+      "saveButton": "Зберегти зміни"
+    }
+  }
+}

@@ -4,6 +4,9 @@ import "./dictionaryModalEditor.scss";
 // react
 import { FC, useEffect, useState } from "react";
 
+// translation
+import { useTranslation } from "react-i18next";
+
 // data
 import {
   getVocabulary,
@@ -28,6 +31,8 @@ const DictionaryModalEditor: FC<DictionaryModalEditorProps> = ({
   const [dict, setDict] = useState<Record<string, string>>({
     apple: "яблуко",
   });
+
+  const { t } = useTranslation();
 
   const initDictionary = getVocabulary(itemKey);
   const [addFormValues, setAddFormValues] = useState<{
@@ -60,6 +65,10 @@ const DictionaryModalEditor: FC<DictionaryModalEditorProps> = ({
   };
 
   const handleDelete = (deletedElem: string) => {
+    if (Object.keys(dict).length <= 1) {
+      console.error("only one value exist, deleting not possible");
+      return;
+    }
     // eslint-disable-next-line no-use-before-define
     const { [deletedElem]: _deletedElem, ...newState } = dict;
     setDict(newState);
@@ -92,7 +101,7 @@ const DictionaryModalEditor: FC<DictionaryModalEditorProps> = ({
               <Button
                 type={buttonType.DANGER}
                 size={buttonSize.BASE}
-                value="delete"
+                value={t("general.button.delete")}
                 handleClick={() => handleDelete(name)}
               />
             </div>
@@ -105,26 +114,29 @@ const DictionaryModalEditor: FC<DictionaryModalEditorProps> = ({
             setValue={(value) => handleAddFormChange("name", value)}
             value={addFormValues.name}
             handleAccept={handleAddFormApply}
-            placeholder="type name"
+            placeholder={t('general.input.placeholder.name')}
           />
           <Input
             setValue={(value) => handleAddFormChange("answer", value)}
             value={addFormValues.answer}
             handleAccept={handleAddFormApply}
-            placeholder="type answer"
+            placeholder={t('general.input.placeholder.answer')}
           />
           <div className="dict-editor-element-button">
             <Button
               size={buttonSize.BASE}
               type={buttonType.SUCCESS}
-              value="add"
+              value={t("general.button.add")}
               handleClick={handleAddFormApply}
             />
           </div>
         </div>
       </div>
       <div className="dict-editor-form-save">
-        <button onClick={handleClick}> save changes </button>
+        <button onClick={handleClick}>
+          {" "}
+          {t("cards.modalEditor.saveButton")}{" "}
+        </button>
       </div>
     </div>
   );

@@ -29,6 +29,7 @@ const DictionariesModalList: FC = () => {
 
   // TODO CONFIRM MODAL WINDOW
   const handleDelete = (key: string) => {
+    if (dictlist.length <= 1) return;
     deleteVocabulary(key);
     updateLocalStorageData();
     setDictList((prev) => prev.filter((item) => item !== key));

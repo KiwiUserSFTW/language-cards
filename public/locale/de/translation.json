@@ -1,0 +1,29 @@
+{
+  "general": {
+    "button": {
+      "add": "Hinzufügen",
+      "edit": "Bearbeiten",
+      "delete": "Löschen"
+    },
+    "input": {
+      "placeholder": {
+        "name": "Name hier eingeben",
+        "answer": "Antwort hier eingeben"
+      }
+    }
+  },
+  "cards": {
+    "navList": {
+      "addEditField": "Wörterbuch hinzufügen oder bearbeiten"
+    },
+    "modalList": {
+      "addButton": {
+        "label": "Neues Wörterbuch hochladen (JSON)",
+        "title": "Datei auswählen oder hierher ziehen"
+      }
+    },
+    "modalEditor": {
+      "saveButton": "Änderungen speichern"
+    }
+  }
+}

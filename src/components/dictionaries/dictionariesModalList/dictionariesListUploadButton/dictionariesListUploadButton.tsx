@@ -4,6 +4,10 @@ import "./dictionariesListUploadButton.scss";
 // react
 import { FC } from "react";
 
+// translation
+import { useTranslation } from "react-i18next";
+
+// types
 type DictionariesListUploadButtonPropsType = {
   handleUpload: (
     event: React.ChangeEvent<HTMLInputElement> | React.DragEvent<HTMLDivElement>
@@ -13,6 +17,8 @@ type DictionariesListUploadButtonPropsType = {
 const DictionariesListUploadButton: FC<
   DictionariesListUploadButtonPropsType
 > = ({ handleUpload }) => {
+  const { t } = useTranslation();
+
   const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
     event.preventDefault();
     handleUpload(event);
@@ -28,8 +34,8 @@ const DictionariesListUploadButton: FC<
       }}
     >
       <div className="dictionary-import">
-        <label htmlFor="input">Upload new dictionary (json)</label>
-        <p> choose from files or drop file here </p>
+        <label htmlFor="input">{t("cards.modalList.addButton.label")}</label>
+        <p>{t("cards.modalList.addButton.title")}</p>
         <input
           id="input"
           name="input"

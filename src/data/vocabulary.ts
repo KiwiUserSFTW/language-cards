@@ -67,6 +67,10 @@ export const deleteVocabulary = (key: string) => {
     console.error(`Vocabulary with key "${key}" does not exist.`);
     return;
   }
+  if (Object.keys(vocabulary).length <= 1) {
+    console.error(`Only one vocab exist, delete doesn't possible`);
+    return;
+  }
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { [key]: _deleted, ...newVocabulary } = vocabulary;
   vocabulary = newVocabulary;
@@ -127,7 +131,6 @@ export const deleteVocabularyValue = (vocabularyKey: string, key: string) => {
     );
     return;
   }
-
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { [key]: _deleted, ...newVocabulary } = vocabulary[vocabularyKey];
   vocabulary[vocabularyKey] = newVocabulary;
