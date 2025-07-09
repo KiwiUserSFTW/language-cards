@@ -46,7 +46,7 @@ const DictionariesListAddField: FC<DictionariesListAddFieldProps> = ({
       />
       <Button
         size={buttonSize.MEDIUM}
-        type={buttonType.SUCCESS}
+        type={buttonType.ADD}
         value={t("general.button.add")}
         handleClick={handleClick}
       />

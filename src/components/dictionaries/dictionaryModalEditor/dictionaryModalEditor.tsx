@@ -99,7 +99,7 @@ const DictionaryModalEditor: FC<DictionaryModalEditorProps> = ({
             </div>
             <div className="dict-editor-element-button">
               <Button
-                type={buttonType.DANGER}
+                type={buttonType.DELETE}
                 size={buttonSize.BASE}
                 value={t("general.button.delete")}
                 handleClick={() => handleDelete(name)}
@@ -125,7 +125,7 @@ const DictionaryModalEditor: FC<DictionaryModalEditorProps> = ({
           <div className="dict-editor-element-button">
             <Button
               size={buttonSize.BASE}
-              type={buttonType.SUCCESS}
+              type={buttonType.ADD}
               value={t("general.button.add")}
               handleClick={handleAddFormApply}
             />

@@ -7,10 +7,12 @@ import { FC, useState } from "react";
 // components
 import DictionaryModalEditor from "@components/dictionaries/dictionaryModalEditor/dictionaryModalEditor";
 import Modal from "@components/general/modal/modal";
-import ExportButton from "@components/general/exportButton/exportButton";
 
 // translation
 import { useTranslation } from "react-i18next";
+
+// api
+import { getVocabulary } from "@data/vocabulary";
 
 // types
 import Button, {
@@ -36,23 +38,41 @@ const DictionariesListItem: FC<DictionariesListItemPropsType> = ({
 
     setModalIsOpen(true);
   };
+  const handleExport = (vocabKey: string) => {
+    const file = JSON.stringify(getVocabulary(vocabKey), null, 2);
 
+    const blob = new Blob([file], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `${vocabKey}.json`;
+    link.click();
+
+    URL.revokeObjectURL(url);
+  };
   return (
     <>
       {dictlist.map((item) => (
         <div className="dict-list-item" key={item}>
           <div className="dict-list-item-title">{item}</div>
           <div className="buttons">
-            <ExportButton vocabKey={item} />
             <Button
               size={buttonSize.MEDIUM}
-              type={buttonType.DANGER}
+              type={buttonType.EXPORT}
+              onlyIcon={true}
+              value="test text"
+              handleClick={() => handleExport(item)}
+            />
+            <Button
+              size={buttonSize.MEDIUM}
+              type={buttonType.DELETE}
               value={t("general.button.delete")}
               handleClick={() => handleDelete(item)}
             />
             <Button
               size={buttonSize.MEDIUM}
-              type={buttonType.SUCCESS}
+              type={buttonType.EDIT}
               value={t("general.button.edit")}
               handleClick={() => handleEdit(item)}
             />

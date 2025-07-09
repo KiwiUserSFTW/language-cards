@@ -1,11 +1,30 @@
-.button {
-    background-color: $color-background-global;
-    border: 1px solid $color-border;
-    border-radius: 4px;
-    font-family: $font-alt;
-    cursor: pointer;
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    .button {
+        background-color: $color-background-global;
+        border-radius: 4px;
+        font-family: $font-alt;
+        align-items: center;
+        cursor: pointer;
+
+        &-icon {
+            display: none;
+
+            &-static {
+                display: block;
+                width: 2vw;
+                height: 2vw;
+            }
+        }
+    }
 }
 
+
+
+// colors
 .danger {
     color: $color-danger;
     border: 2px solid $color-danger;
@@ -16,6 +35,11 @@
     border: 2px solid $color-success;
 }
 
+.none {
+    background-color: aqua;
+}
+
+// size
 .base {
     font-size: $font-size-base;
 }
@@ -25,9 +49,36 @@
 }
 
 @media (max-width: 768px) {
+    .buttons {
+        .button {
+            border: none;
+
+            &-name {
+                display: none;
+            }
+
+            &-icon {
+
+                display: block;
+                width: 8vw;
+                height: 8vw;
+
+                &-static {
+                    color: transparent;
+                    text-shadow: none;
+                    width: 8vw;
+                    height: 8vw;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    // size
     .base {
         font-size: $font-size-xsmall;
     }
+
     .medium {
         font-size: $font-size-base;
     }
