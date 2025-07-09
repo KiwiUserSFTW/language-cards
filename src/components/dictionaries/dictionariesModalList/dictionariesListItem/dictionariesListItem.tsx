@@ -7,6 +7,7 @@ import { FC, useState } from "react";
 // components
 import DictionaryModalEditor from "@components/dictionaries/dictionaryModalEditor/dictionaryModalEditor";
 import Modal from "@components/general/modal/modal";
+import ExportButton from "@components/general/exportButton/exportButton";
 
 // translation
 import { useTranslation } from "react-i18next";
@@ -42,6 +43,7 @@ const DictionariesListItem: FC<DictionariesListItemPropsType> = ({
         <div className="dict-list-item" key={item}>
           <div className="dict-list-item-title">{item}</div>
           <div className="buttons">
+            <ExportButton vocabKey={item} />
             <Button
               size={buttonSize.MEDIUM}
               type={buttonType.DANGER}

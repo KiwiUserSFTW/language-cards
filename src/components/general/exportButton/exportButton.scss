@@ -1,0 +1,11 @@
+.exportButton {
+    width: 2vw;
+    height: 2vw;
+}
+
+@media (max-width: 768px) {
+    .exportButton {
+        width: 6vw;
+        height: 6vw;
+    }
+}

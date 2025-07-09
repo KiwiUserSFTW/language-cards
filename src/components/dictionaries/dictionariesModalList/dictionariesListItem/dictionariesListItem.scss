@@ -30,6 +30,8 @@
 
   .buttons {
     display: flex;
+    align-items: center;
+    cursor: pointer;
     gap: 10px;
     margin-left: 2vh;
   }
