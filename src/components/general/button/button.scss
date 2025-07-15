@@ -12,11 +12,11 @@
 
         &-icon {
             display: none;
+            width: 2vw;
+            height: 2vw;
 
-            &-static {
+            &.only {
                 display: block;
-                width: 2vw;
-                height: 2vw;
             }
         }
     }
@@ -58,18 +58,9 @@
             }
 
             &-icon {
-
                 display: block;
                 width: 8vw;
                 height: 8vw;
-
-                &-static {
-                    color: transparent;
-                    text-shadow: none;
-                    width: 8vw;
-                    height: 8vw;
-                    text-decoration: none;
-                }
             }
         }
     }

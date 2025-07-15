@@ -61,7 +61,6 @@ const DictionariesListItem: FC<DictionariesListItemPropsType> = ({
               size={buttonSize.MEDIUM}
               type={buttonType.EXPORT}
               onlyIcon={true}
-              value="test text"
               handleClick={() => handleExport(item)}
             />
             <Button

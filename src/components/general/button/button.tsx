@@ -53,12 +53,10 @@ const Button: FC<ButtonProps> = ({
         className={`button ${size} ${buttonColor[type]}`}
         onClick={() => handleClick()}
       >
-        <div className={`${onlyIcon ? "button-icon-only" : "button-name"}`}>{value}</div>
+        {!onlyIcon && <div className="button-name">{value}</div>}
         <div>
           <img
-            className={`${onlyIcon ? "button-icon-only" : "button-icon"}`}
-            width="50"
-            height="50"
+            className={`button-icon ${onlyIcon && "only"}`}
             src={iconUrls[type]}
             alt="delete-forever"
           />
