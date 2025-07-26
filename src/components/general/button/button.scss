@@ -52,6 +52,7 @@
     .buttons {
         .button {
             border: none;
+            padding: 0 1px 0 1px;
 
             &-name {
                 display: none;
@@ -59,8 +60,8 @@
 
             &-icon {
                 display: block;
-                width: 8vw;
-                height: 8vw;
+                width: 9vw;
+                height: 9vw;
             }
         }
     }

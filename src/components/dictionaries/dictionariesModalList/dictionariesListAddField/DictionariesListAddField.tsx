@@ -1,9 +1,6 @@
 // react
 import { FC, useState } from "react";
 
-// style
-import "./dictionariesListAddField.scss";
-
 // components
 import Input from "@components/general/input/input";
 

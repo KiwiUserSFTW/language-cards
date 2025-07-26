@@ -1,6 +1,7 @@
 .dict-list-item {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-family: $font-alt;
   margin: 8px;
   padding: $padding-medium;
@@ -28,7 +29,7 @@
     content: none;
   }
 
- 
+
 }
 
 @media (max-width: 768px) {
@@ -38,12 +39,6 @@
 
     &::before {
       transform: translateY(-4px);
-    }
-
-    .buttons {
-      button {
-        font-size: $font-size-xsmall;
-      }
     }
   }
 }

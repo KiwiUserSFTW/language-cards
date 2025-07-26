@@ -93,15 +93,17 @@
 @media (max-width:768px) {
     .dict-editor-element {
         font-size: $font-size-xsmall;
-        padding: $padding-small;
+        padding: $padding-medium;
         width: 100%;
+
         &-name {
-            flex:1;
+            flex: 1;
             position: relative;
             width: 10vw;
         }
+
         &-input {
-            flex:1;
+            flex: 1;
             width: 10vw;
         }
     }
