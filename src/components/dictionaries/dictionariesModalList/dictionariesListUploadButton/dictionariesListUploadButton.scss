@@ -33,13 +33,15 @@
 
 @media (max-width: 768px) {
   .dictionary-import {
+    
     label {
+      margin: 15px 0 5px 0;
       font-size: $font-size-xsmall;
     }
 
     p {
       font-size: $font-size-small;
-      top: -20px;
+      top: -15px;
       opacity: 0.7;
     }
   }
