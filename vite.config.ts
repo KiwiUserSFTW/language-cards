@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig } from "vitest/config";
 import react from "@vitejs/plugin-react";
 import path from "path";
 
@@ -13,6 +13,11 @@ export default defineConfig({
       "@cutomHooks": path.resolve(__dirname, "src/customHooks"),
       "@data": path.resolve(__dirname, "src/data"),
     },
+  },
+  test: {
+    globals: true,
+    environment: "jsdom",
+    setupFiles: "./src/setupTests.ts",
   },
   css: {
     preprocessorOptions: {
