@@ -20,7 +20,7 @@ const createCardsList = (dictId: string) => {
 // components
 import Card from "./card/card";
 import DictionariesNavList from "@components/dictionaries/dictionariesNavList/dictionariesNavList";
-import LanguageSwithcer from "@components/general/languageSwitcher/languageSwitcher";
+import LanguageSwitcher from "@components/general/languageSwitcher/languageSwitcher";
 
 // custom hooks
 import useQuery from "@cutomHooks/useQuery";
@@ -78,7 +78,7 @@ const Cards: FC = () => {
         answer={currentCard.answer}
         updateCards={(value) => updateCards(value)}
       />
-      <LanguageSwithcer />
+      <LanguageSwitcher />
     </div>
   );
 };

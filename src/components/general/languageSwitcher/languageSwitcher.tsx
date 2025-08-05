@@ -18,7 +18,7 @@ enum languages {
   DE = "de",
 }
 
-const languageNamesMap: Record<languages, string> = {
+export const languageNamesMap: Record<languages, string> = {
   [languages.UK]: "uk",
   [languages.EN]: "en",
   // [languages.AR]: "ar",
@@ -29,7 +29,7 @@ const languageNamesMap: Record<languages, string> = {
 // types
 type languageKey = keyof typeof languages;
 
-const LanguageSwithcer: FC = () => {
+const LanguageSwitcher: FC = () => {
   const { i18n } = useTranslation();
 
   const [activeTab, setActiveTab] = useState<languages>(
@@ -57,4 +57,4 @@ const LanguageSwithcer: FC = () => {
     </div>
   );
 };
-export default LanguageSwithcer;
+export default LanguageSwitcher;
