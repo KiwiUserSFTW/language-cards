@@ -10,7 +10,7 @@ export type TabSwitcherType = {
   setActiveTab: (name: string) => void;
 };
 
-type tabType = {
+export type tabType = {
   name: string;
   button?: boolean;
   onClick: () => void;

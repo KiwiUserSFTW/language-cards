@@ -36,8 +36,9 @@ const Modal: FC<modalPropsType> = ({ open, setOpen, children }) => {
   if (!visible) return null;
 
   return (
-    <div className="modal" onClick={onClose}>
+    <div className="modal" role="modal" onClick={onClose}>
       <div
+        role="modal-container"
         className={`modal-container ${animationClass}`}
         onClick={(e) => e.stopPropagation()}
       >

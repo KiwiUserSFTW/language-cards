@@ -1,11 +1,11 @@
 // react
-import { render, screen } from "@testing-library/react";
 import { useState } from "react";
 
 // testing library
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-// components
+// component
 import Input from "./input";
 
 describe("Input", () => {

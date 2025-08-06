@@ -1,4 +1,4 @@
-// react
+// testing library
 import { render, screen } from "@testing-library/react";
 
 // components
@@ -10,7 +10,7 @@ import { languageNamesMap } from "./languageSwitcher";
 const initLanguage = "en";
 
 vi.mock("react-i18next", async () => {
-  const actual = await vi.importActual<any>("react-i18next");
+  const actual = await vi.importActual("react-i18next");
   return {
     ...actual,
     useTranslation: () => ({
